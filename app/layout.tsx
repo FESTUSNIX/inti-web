@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en' className={`${outfit.variable} ${sourceSansPro.variable}`}>
-			<body>
+			<body suppressHydrationWarning={true}>
 				<Navbar />
 				{children}
 			</body>

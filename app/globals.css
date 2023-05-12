@@ -47,4 +47,8 @@ body {
 			max-width: 1400px;
 		}
 	}
+
+	.gradient-wave {
+		@apply hover:animate-gradient-wave hover:bg-[length:150%_100%];
+	}
 }

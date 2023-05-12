@@ -7,7 +7,7 @@ module.exports = {
 	],
 	theme: {
 		screens: {
-			sm: '576',
+			sm: '576px',
 			md: '768px',
 			lg: '992px',
 			xl: '1200px',
@@ -36,11 +36,27 @@ module.exports = {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'gradient-brand': 'linear-gradient(to right,)'
+				'gradient-brand': 'linear-gradient(to right, #9316CE, #3300FF)'
 			},
 			fontFamily: {
 				heading: ['var(--font-outfit)'],
 				body: ['var(--font-source-sans-pro)']
+			},
+			keyframes: {
+				wave: {
+					'0%': {
+						'background-position': '0% 0%'
+					},
+					'50%': {
+						'background-position': '100% 0%'
+					},
+					'100%': {
+						'background-position': '0% 0%'
+					}
+				}
+			},
+			animation: {
+				'gradient-wave': 'wave 4s linear infinite'
 			}
 		}
 	},
