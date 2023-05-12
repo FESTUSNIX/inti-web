@@ -1,18 +1,48 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  plugins: [],
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}'
+	],
+	theme: {
+		screens: {
+			sm: '576',
+			md: '768px',
+			lg: '992px',
+			xl: '1200px',
+			'2xl': '1400px',
+			'3xl': '1600px'
+		},
+		colors: {
+			transparent: 'transparent',
+			background: '#06000F',
+			dark: {
+				900: '#18181b',
+				800: '#26262B',
+				700: '#60606C'
+			},
+			neutral: {
+				50: '#FAFAFA',
+				100: '#F5F5F5',
+				200: '#E5E5E5',
+				300: '#D4D4D4',
+				400: '#A3A3A3'
+			},
+			pink: '#9316CE',
+			purple: '#3300FF'
+		},
+		extend: {
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-brand': 'linear-gradient(to right,)'
+			},
+			fontFamily: {
+				heading: ['var(--font-outfit)'],
+				body: ['var(--font-source-sans-pro)']
+			}
+		}
+	},
+	plugins: []
 }
