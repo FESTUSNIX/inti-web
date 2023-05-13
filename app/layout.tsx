@@ -10,7 +10,7 @@ const outfit = Outfit({
 const sourceSansPro = Source_Sans_Pro({
 	display: 'swap',
 	subsets: ['latin-ext'],
-	weight: ['400', '600', '700'],
+	weight: ['400', '600', '700', '900'],
 	variable: '--font-source-sans-pro'
 })
 

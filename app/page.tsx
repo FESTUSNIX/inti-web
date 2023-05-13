@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import Hero from './components/modules/Hero'
+import WebsitePros from './components/modules/WebsitePros'
+import OurAdvantages from './components/modules/OurAdvantages'
+import Portfolio from './components/modules/Portfolio'
 
 export default function Home() {
 	return (
 		<main className='wrapper mt-24'>
 			<Hero />
-			<div className='h-96'></div>
+			<WebsitePros />
+			<OurAdvantages />
+			<Portfolio />
 			<div className='h-96'></div>
 			<div className='h-96'></div>
 			<div className='h-96'></div>

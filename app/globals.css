@@ -19,10 +19,9 @@ body {
 
 @layer components {
 	.wrapper {
-		max-width: 1300px;
 		max-width: calc(100vw - 4rem);
-		margin: 0 auto;
 		width: 100%;
+		margin: 0 auto;
 	}
 
 	@screen sm {
@@ -44,11 +43,17 @@ body {
 
 	@screen 3xl {
 		.wrapper {
-			max-width: 1400px;
+			max-width: 1200px;
 		}
 	}
 
 	.gradient-wave {
 		@apply hover:animate-gradient-wave hover:bg-[length:150%_100%];
+	}
+}
+
+@layer utilities {
+	.section-margin {
+		@apply my-10;
 	}
 }

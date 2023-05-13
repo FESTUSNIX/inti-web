@@ -1,11 +1,9 @@
 import React from 'react'
 import Button from '../../elements/Button'
 
-type Props = {}
-
-const Hero = (props: Props) => {
+const Hero = () => {
 	return (
-		<header className='pt-16'>
+		<header className='mb-24 pt-16'>
 			<h1 className='mb-4 max-w-full font-heading text-5xl font-black text-neutral-50'>
 				<span>Sięgaj po</span>
 				<span className='bg-gradient-brand bg-clip-text text-transparent'>&nbsp;więcej&nbsp;</span>
