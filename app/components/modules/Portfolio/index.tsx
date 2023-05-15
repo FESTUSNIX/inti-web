@@ -1,84 +1,60 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
-import SectionHeading from '../../elements/SectionHeading'
-import Button from '../../elements/Button'
-import Image from 'next/image'
+import React, { useRef } from 'react'
 import LaptopImage from './assets/laptop-image.png'
 import TabletImage from './assets/tablet-image.png'
 import PhoneImage from './assets/phone-image.png'
+
 import { useScrollPosition } from '@/app/hooks/useScrollPosition'
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
+import DeviceFrame from './components/elements/ProjectImage/ProjectImage'
+import ProjectText from './components/modules/ProjectText'
+import ImagesContainer from './components/modules/ImagesContainer'
+import ProjectImage from './components/elements/ProjectImage/ProjectImage'
+import { Project, ProjectImage as ProjectImageType } from '@/types/types'
+
+const project: Project = {
+	id: Math.random(),
+	name: 'Novies',
+	description:
+		'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam qui quos, dolorum harum, dolore voluptate, quis sit provident sapiente voluptatibus excepturi nostrum aliquam eaque unde.',
+	images: [
+		{
+			image: PhoneImage,
+			bottom: '-60vh',
+			speed: 0.3,
+			right: '-3vw',
+			maxWidth: '40%'
+		},
+		{
+			image: LaptopImage,
+			bottom: '-70vh',
+			speed: 0.35,
+			left: '-8vw',
+			maxWidth: '80%'
+		},
+		{
+			image: TabletImage,
+			bottom: '-90vh',
+			speed: 0.6,
+			left: '0',
+			maxWidth: '60%'
+		}
+	]
+}
+
+const projects: Project[] = Array(3).fill(project)
 
 const Portfolio = () => {
+	//  DO NOT DELETE - Somehow it doesn't work without it
 	const scrollPos = useScrollPosition()
-	const sectionEl = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
-		if (!sectionEl?.current) return
-
-		if (scrollPos >= sectionEl.current.scrollHeight) {
-			console.log(scrollPos, sectionEl.current.scrollHeight)
-		}
-	}, [scrollPos])
-
-	// console.log(sectionEl)
+	const sectionElement = useRef<HTMLDivElement>(null)
 
 	return (
-		<section className='relative flex'>
-			<div className='wrapper fixed inset-0'>
-				<div className='left-0 top-0 flex h-screen w-2/5 flex-col justify-center pt-24'>
-					<SectionHeading>Zobacz wybrane realizacje naszych stron</SectionHeading>
+		<section className='relative flex flex-col lg:flex-row' ref={sectionElement}>
+			<ProjectText sectionElement={sectionElement} />
 
-					<p className='mb-4 text-neutral-400'>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum placeat aut, accusantium quaerat nesciunt
-						veniam culpa tenetur, tempore voluptas, in eos aperiam fugit fugiat ab?
-					</p>
-
-					<Button className='w-max'>zobacz więcej</Button>
-				</div>
-			</div>
-
-			<ParallaxProvider>
-				<div className='ml-[40%] flex w-3/5 flex-col' ref={sectionEl}>
-					{/* <Parallax speed={-30}>
-						<div className='relative mt-[40vh] h-screen'>
-							<Image src={LaptopImage} alt='' className='absolute bottom-[-20vh] left-0 duration-200 ease-out' />
-						</div>
-					</Parallax>
-
-					<Parallax speed={15}>
-						<div className='relative mt-[40vh] h-screen'>
-							<Image src={TabletImage} alt='' className='absolute bottom-[-90vh] left-0 duration-200 ease-out' />
-						</div>
-					</Parallax> */}
-
-					<div className='relative mt-[40vh] h-screen'>
-						<Parallax speed={10}>
-							<Image
-								src={PhoneImage}
-								alt=''
-								className='absolute bottom-[-90vh] left-0 scale-[0.6] duration-200 ease-out'
-							/>
-						</Parallax>
-						<Parallax speed={15}>
-							<Image
-								src={TabletImage}
-								alt=''
-								className='absolute bottom-[-100vh] right-[-2vw] scale-75 duration-200 ease-out'
-							/>
-						</Parallax>
-
-						<Parallax speed={30}>
-							<Image
-								src={PhoneImage}
-								alt=''
-								className='absolute bottom-[-120vh] left-0 scale-50 duration-200 ease-out'
-							/>
-						</Parallax>
-					</div>
-				</div>
-			</ParallaxProvider>
+			<ImagesContainer projects={projects} sectionElement={sectionElement} />
 		</section>
 	)
 }
