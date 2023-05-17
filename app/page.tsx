@@ -6,7 +6,7 @@ import Portfolio from './components/modules/Portfolio'
 
 export default function Home() {
 	return (
-		<main className='wrapper mt-24'>
+		<main className='mt-24'>
 			<Hero />
 			<WebsitePros />
 			<OurAdvantages />

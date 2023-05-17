@@ -4,7 +4,7 @@ import Card from './components/modules/Card'
 
 const WebsitePros = () => {
 	return (
-		<section className='section-margin'>
+		<section className='section-margin wrapper'>
 			<div className='mb-16'>
 				<SectionHeading>Strona internetowa - medium na miarę XXI wieku</SectionHeading>
 

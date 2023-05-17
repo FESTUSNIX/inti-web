@@ -45,13 +45,16 @@ module.exports = {
 			keyframes: {
 				wave: {
 					'0%': {
-						'background-position': '0% 0%'
+						'background-position': '0% 0%',
+						'background-size': '100% 100%'
 					},
 					'50%': {
-						'background-position': '100% 0%'
+						'background-position': '100% 0%',
+						'background-size': '150% 100%'
 					},
 					'100%': {
-						'background-position': '0% 0%'
+						'background-position': '0% 0%',
+						'background-size': '100% 100%'
 					}
 				}
 			},

@@ -6,7 +6,6 @@ html {
 	min-height: 100%;
 	height: 100%;
 	font-family: var(--font-source-sans-pro), sans-serif;
-	overflow-x: hidden;
 }
 
 body {
@@ -48,10 +47,16 @@ body {
 	}
 
 	.gradient-wave {
-		@apply hover:animate-gradient-wave hover:bg-[length:150%_100%];
+		@apply hover:animate-gradient-wave;
+	}
+
+	/* https://github.com/pmndrs/react-spring/issues/609 */
+	.parallax-remove-scrollbar {
+		-webkit-scrollbar-display: none !important;
+		scrollbar-width: 0 !important;
+		overflow: hidden !important;
 	}
 }
-
 @layer utilities {
 	.section-margin {
 		@apply my-10;

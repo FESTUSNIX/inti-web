@@ -4,7 +4,7 @@ import Card from './components/modules/Card'
 
 const OurAdvantages = () => {
 	return (
-		<section className='mb-32'>
+		<section className='wrapper mb-32'>
 			<SectionHeading className='mb-12 text-center'>Wszystko czego potrzebuje twoja firma</SectionHeading>
 
 			<div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-8'>

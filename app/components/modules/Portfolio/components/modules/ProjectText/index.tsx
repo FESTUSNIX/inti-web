@@ -5,12 +5,14 @@ import SectionHeading from '@/app/components/elements/SectionHeading'
 import { calculateElementScrollProgress } from '@/app/utils/calculateElementScrollProgress'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import React, { useRef } from 'react'
+import { projects } from '../../../assets/exampleProjects'
 
 type Props = {
 	sectionElement: React.RefObject<HTMLDivElement>
+	currentProjectIndex: number
 }
 
-const ProjectText = ({ sectionElement }: Props) => {
+const ProjectText = ({ sectionElement, currentProjectIndex }: Props) => {
 	const textElement = useRef<HTMLDivElement>(null)
 
 	const { scrollY } = useScroll()
@@ -27,14 +29,20 @@ const ProjectText = ({ sectionElement }: Props) => {
 	)
 
 	const isInCenterOfScreen = () => {
-		if (!sectionElement.current || !textElement.current) {
-			return false
-		}
+		if (!sectionElement.current || !textElement.current) return false
 
 		return (
 			sectionElement.current.getBoundingClientRect()?.top < (window.innerHeight - textElement.current.offsetHeight) / 2
 		)
 	}
+
+	const defaultText = useRef({
+		name: 'Zobacz wybrane realizacje naszych stron',
+		description:
+			'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum placeat aut, accusantium quaerat nesciunt veniam culpa tenetur, tempore voluptas, in eos aperiam fugit fugiat ab?'
+	})
+
+	const currentProject = currentProjectIndex === -1 ? defaultText.current : projects[currentProjectIndex]
 
 	return (
 		<div className='min-h-full grow lg:basis-2/5'>
@@ -44,11 +52,8 @@ const ProjectText = ({ sectionElement }: Props) => {
 					isInCenterOfScreen() ? `fixed top-1/2 -translate-y-1/2` : 'relative'
 				}`}
 				style={{ width: sectionElement?.current?.offsetWidth! * 0.4 }}>
-				<SectionHeading>Zobacz wybrane realizacje naszych stron</SectionHeading>
-				<p className='mb-4 text-neutral-400'>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum placeat aut, accusantium quaerat nesciunt
-					veniam culpa tenetur, tempore voluptas, in eos aperiam fugit fugiat ab?
-				</p>
+				<SectionHeading>{currentProject.name}</SectionHeading>
+				<p className='mb-4 text-neutral-400'>{currentProject.description}</p>
 
 				<Button className='w-max'>zobacz więcej</Button>
 
