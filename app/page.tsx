@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import Hero from './components/modules/Hero'
 import WebsitePros from './components/modules/WebsitePros'
 import OurAdvantages from './components/modules/OurAdvantages'
 import Portfolio from './components/modules/Portfolio'
 import Testimonials from './components/modules/Testimonials'
+import FAQ from './components/modules/FAQ'
 
 export default function Home() {
 	return (
@@ -13,6 +13,7 @@ export default function Home() {
 			<OurAdvantages />
 			<Portfolio />
 			<Testimonials />
+			<FAQ />
 			<div className='h-96'></div>
 			<div className='h-96'></div>
 			<div className='h-96'></div>
