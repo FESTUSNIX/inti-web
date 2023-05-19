@@ -1,6 +1,5 @@
-import Image from 'next/image'
 import React, { useRef } from 'react'
-import ChevronDown from '../../../assets/chevron-down.svg'
+import { FaChevronDown } from 'react-icons/fa'
 
 type Props = {
 	index: number
@@ -26,11 +25,7 @@ const Row = ({ index, title, answer, activeRow, setActiveRow }: Props) => {
 				</h3>
 
 				<div className={`p-3 duration-500 ${isActive ? 'rotate-180' : ''}`}>
-					<Image
-						src={ChevronDown}
-						alt={isActive ? 'collapse row' : 'expand row'}
-						className='opacity-80 invert duration-300 group-hover:opacity-100'
-					/>
+					<FaChevronDown className='text-neutral-200 duration-300 group-hover:text-neutral-100' />
 				</div>
 			</div>
 			<div
