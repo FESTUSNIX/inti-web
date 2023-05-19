@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import ProjectImage from '../../elements/ProjectImage'
 import { Project } from '@/types/types'
 import { useScrollListener } from '@/app/hooks/useScrollListener'

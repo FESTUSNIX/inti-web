@@ -62,3 +62,7 @@ body {
 		@apply my-10;
 	}
 }
+
+.swiper .swiper-wrapper .swiper-slide {
+	height: auto;
+}
