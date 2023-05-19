@@ -4,8 +4,8 @@ import Accordion from './components/modules/Accordion'
 
 const FAQ = () => {
 	return (
-		<section className='wrapper'>
-			<SectionHeading className='priority:mb-8'>Często zadawane pytania </SectionHeading>
+		<section className='wrapper mb-24'>
+			<SectionHeading className='priority:mb-8'>Często zadawane pytania</SectionHeading>
 
 			<Accordion />
 		</section>
