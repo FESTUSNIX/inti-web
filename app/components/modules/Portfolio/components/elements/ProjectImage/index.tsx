@@ -7,9 +7,20 @@ import { ProjectImage as ProjectImageType } from '@/types/types'
 
 type Props = ProjectImageType & {
 	projectSectionRef: React.RefObject<HTMLDivElement>
+	sectionElement: React.RefObject<HTMLDivElement>
 }
 
-const ProjectImage = ({ projectSectionRef, bottom, left, right, maxWidth, speed, image, alt = '' }: Props) => {
+const ProjectImage = ({
+	projectSectionRef,
+	sectionElement,
+	bottom,
+	left,
+	right,
+	maxWidth,
+	speed,
+	image,
+	alt = ''
+}: Props) => {
 	const { scrollY } = useScroll()
 
 	const springTransition = useSpring(scrollY, {
@@ -20,7 +31,7 @@ const ProjectImage = ({ projectSectionRef, bottom, left, right, maxWidth, speed,
 
 	const transformedY = useTransform(
 		springTransition,
-		value => -(value - (projectSectionRef?.current?.offsetTop ?? 0)) * speed
+		value => -(value - (projectSectionRef?.current?.offsetTop ?? 0) - (sectionElement?.current?.offsetTop ?? 0)) * speed
 	)
 
 	return (

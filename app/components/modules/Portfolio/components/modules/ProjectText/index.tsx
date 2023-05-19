@@ -2,10 +2,10 @@
 
 import Button from '@/app/components/elements/Button'
 import SectionHeading from '@/app/components/elements/SectionHeading'
-import { calculateElementScrollProgress } from '@/app/utils/calculateElementScrollProgress'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { projects } from '../../../assets/exampleProjects'
+import useResponsive from '@/app/hooks/useResponsive'
+import ScrollProgress from '../../elements/ScrollProgress'
 
 type Props = {
 	sectionElement: React.RefObject<HTMLDivElement>
@@ -13,27 +13,23 @@ type Props = {
 }
 
 const ProjectText = ({ sectionElement, currentProjectIndex }: Props) => {
+	const { isLG } = useResponsive()
 	const textElement = useRef<HTMLDivElement>(null)
+	let textElementFirstHeight = useRef(0)
 
-	const { scrollY } = useScroll()
-
-	const defaultSpring = useSpring(scrollY, {
-		stiffness: 400,
-		damping: 50,
-		bounce: 0
-	})
-
-	const sectionScrollProgress = useTransform(
-		defaultSpring,
-		value => calculateElementScrollProgress(value, sectionElement.current!) / 100
-	)
-
-	const isInCenterOfScreen = () => {
+	const isInStickPosition = () => {
 		if (!sectionElement.current || !textElement.current) return false
 
 		return (
-			sectionElement.current.getBoundingClientRect()?.top < (window.innerHeight - textElement.current.offsetHeight) / 2
+			sectionElement.current.getBoundingClientRect()?.top <
+			(isLG ? window.innerHeight / 2 - textElement.current.offsetHeight / 2 : 112)
 		)
+	}
+
+	const isInSectionBottom = () => {
+		if (!sectionElement.current || !textElement.current) return false
+
+		return sectionElement.current.getBoundingClientRect()?.bottom < window.innerHeight
 	}
 
 	const defaultText = useRef({
@@ -42,37 +38,37 @@ const ProjectText = ({ sectionElement, currentProjectIndex }: Props) => {
 			'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum placeat aut, accusantium quaerat nesciunt veniam culpa tenetur, tempore voluptas, in eos aperiam fugit fugiat ab?'
 	})
 
-	const currentProject = currentProjectIndex === -1 ? defaultText.current : projects[currentProjectIndex]
+	const currentProject = !isInStickPosition() ? defaultText.current : projects[currentProjectIndex]
+
+	useEffect(() => {
+		if (!textElement?.current?.offsetHeight) return
+
+		textElementFirstHeight.current = textElement.current.offsetHeight
+	}, [])
 
 	return (
-		<div className='min-h-full grow lg:basis-2/5'>
+		<div
+			className={`min-h-full grow lg:basis-2/5 ${isInSectionBottom() ? 'flex' : ''}`}
+			style={{ minHeight: textElementFirstHeight.current }}>
 			<div
 				ref={textElement}
-				className={`flex flex-col justify-center ${
-					isInCenterOfScreen() ? `fixed top-1/2 -translate-y-1/2` : 'relative'
+				className={`flex flex-col lg:pr-12 ${
+					!isInSectionBottom() && isInStickPosition() ? `fixed top-0 max-lg:mt-28 lg:top-1/2 lg:-translate-y-1/2` : ''
+				} ${
+					isInSectionBottom()
+						? 'absolute bottom-[75vh] top-auto mt-auto translate-y-1/2 justify-end lg:relative lg:bottom-[50vh]'
+						: 'justify-center'
 				}`}
-				style={{ width: sectionElement?.current?.offsetWidth! * 0.4 }}>
-				<SectionHeading>{currentProject.name}</SectionHeading>
-				<p className='mb-4 text-neutral-400'>{currentProject.description}</p>
+				style={{ width: sectionElement?.current?.offsetWidth! * (isLG ? 0.4 : 1) }}>
+				<div>
+					<SectionHeading>{currentProject.name}</SectionHeading>
+					<p className='mb-4 text-neutral-400'>{currentProject.description}</p>
+				</div>
 
 				<Button className='w-max'>zobacz więcej</Button>
 
-				<div className='absolute right-0 top-1/2 w-48 -translate-y-1/2 translate-x-[30vw] text-neutral-200 opacity-10'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='100%'
-						height='100%'
-						viewBox='0 0 24 24'
-						fill='none'
-						stroke='currentColor'
-						strokeWidth='2'
-						strokeLinecap='round'
-						strokeLinejoin='round'
-						className='feather feather-arrow-down-circle'>
-						<motion.circle cx='12' cy='12' r='10' style={{ pathLength: sectionScrollProgress }} />
-						<motion.polyline points='8 12 12 16 16 12' />
-						<motion.line x1='12' y1='8' x2='12' y2='16' />
-					</svg>
+				<div className='relative'>
+					<ScrollProgress sectionElement={sectionElement} />
 				</div>
 			</div>
 		</div>

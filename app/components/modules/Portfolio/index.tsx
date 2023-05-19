@@ -3,10 +3,9 @@
 import React, { useRef, useState } from 'react'
 
 import { useScrollPosition } from '@/app/hooks/useScrollPosition'
-import DeviceFrame from './components/elements/ProjectImage/ProjectImage'
 import ProjectText from './components/modules/ProjectText'
 import ImagesContainer from './components/modules/ImagesContainer'
-import { Project, ProjectImage as ProjectImageType } from '@/types/types'
+import ScrollProgress from './components/elements/ScrollProgress'
 
 const Portfolio = () => {
 	//  DO NOT DELETE - Somehow it doesn't work without it
@@ -18,7 +17,7 @@ const Portfolio = () => {
 		<section className='wrapper relative flex flex-col lg:flex-row' ref={sectionElement}>
 			<ProjectText sectionElement={sectionElement} currentProjectIndex={currentProject} />
 
-			<ImagesContainer setCurrentProject={setCurrentProject} />
+			<ImagesContainer setCurrentProject={setCurrentProject} sectionElement={sectionElement} />
 		</section>
 	)
 }

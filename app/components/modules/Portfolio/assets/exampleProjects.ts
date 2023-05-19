@@ -5,22 +5,22 @@ import PhoneImage from './phone-image.png'
 
 const images = [
 	{
-		image: PhoneImage,
-		bottom: '-60vh',
-		speed: 0.25,
-		right: '-3vw',
-		maxWidth: '40%'
-	},
-	{
 		image: LaptopImage,
-		bottom: '-70vh',
-		speed: 0.35,
+		bottom: '-10vh',
+		speed: 0.2,
 		left: '-8vw',
 		maxWidth: '80%'
 	},
 	{
+		image: PhoneImage,
+		bottom: '0',
+		speed: 0.15,
+		right: '-3vw',
+		maxWidth: '40%'
+	},
+	{
 		image: TabletImage,
-		bottom: '-90vh',
+		bottom: '0vh',
 		speed: 0.6,
 		left: '0',
 		maxWidth: '60%'

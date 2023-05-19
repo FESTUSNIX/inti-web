@@ -14,6 +14,8 @@ export default function Home() {
 			<div className='h-96'></div>
 			<div className='h-96'></div>
 			<div className='h-96'></div>
+
+			{/* <div className='fixed left-1/2 top-0 h-screen w-px -translate-x-1/2 bg-[#ff0000]'></div> */}
 		</main>
 	)
 }
