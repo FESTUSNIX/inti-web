@@ -8,7 +8,8 @@ const breakpoints: { [key: string]: number } = {
 	lg: 992,
 	xl: 1200,
 	'2xl': 1400,
-	'3xl': 1600
+	'3xl': 1600,
+	'4xl': 2000
 }
 
 const useResponsive = () => {
@@ -19,8 +20,9 @@ const useResponsive = () => {
 	const isXL = useMediaQuery({ minWidth: breakpoints.xl })
 	const is2XL = useMediaQuery({ minWidth: breakpoints['2xl'] })
 	const is3XL = useMediaQuery({ minWidth: breakpoints['3xl'] })
+	const is4XL = useMediaQuery({ minWidth: breakpoints['4xl'] })
 
-	return { isXS, isSM, isMD, isLG, isXL, is2XL, is3XL }
+	return { isXS, isSM, isMD, isLG, isXL, is2XL, is3XL, is4XL }
 }
 
 export default useResponsive
