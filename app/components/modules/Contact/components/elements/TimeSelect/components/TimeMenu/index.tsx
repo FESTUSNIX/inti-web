@@ -28,7 +28,7 @@ const TimeMenu = ({ value, setValue, active, setActive }: Props) => {
 	return (
 		<OutsideClickHandler onOutsideClick={() => setActive(false)}>
 			<div
-				className={`overflow-y-overlay thin-scrollbar absolute -bottom-2 right-0 z-20 flex max-h-64 origin-top translate-y-full items-start overflow-x-hidden rounded-lg border border-dark-700/20 bg-dark-800/20 duration-150 ${
+				className={`overflow-y-overlay thin-scrollbar absolute -bottom-2 right-0 z-20 flex max-h-64 origin-top translate-y-full items-start overflow-x-hidden rounded-lg border border-dark-700/20 bg-dark-800/20 backdrop-blur-md duration-150 ${
 					active ? 'scale-y-100' : 'scale-y-0'
 				}`}>
 				<div className='flex flex-col text-neutral-400'>
