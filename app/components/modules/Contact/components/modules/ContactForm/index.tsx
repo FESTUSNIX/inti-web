@@ -4,16 +4,35 @@ import Button from '@/app/components/elements/Button'
 import React, { useState } from 'react'
 import TimeSelect from '../../elements/TimeSelect'
 import TextInput from '../../elements/TextInput'
+import SelectInput from '../../elements/SelectInput'
 
 const ContactForm = () => {
+	const [intrest, setIntrest] = useState('')
 	const [name, setName] = useState('')
 
 	const [startTime, setStartTime] = useState({ hour: '', minutes: '00' })
 	const [endTime, setEndTime] = useState({ hour: '', minutes: '00' })
 
+	const intrestOptions = [
+		{
+			label: 'UI/UX Design',
+			value: 'UI/UX Design'
+		},
+		{
+			label: 'SEO Optimization',
+			value: 'SEO Optimization'
+		},
+		{
+			label: 'Code optimalization',
+			value: 'Code optimalization'
+		}
+	]
+
 	return (
-		<div className='flex flex-col rounded-lg bg-dark-800/20 p-4'>
+		<div className='flex shrink-0 basis-1/2 grow flex-col gap-16 rounded-lg md:bg-dark-800/20 md:p-4'>
 			<div className='flex flex-col gap-6'>
+				<SelectInput isMulti setValue={setIntrest} placeholder='Interesuje mnie...' options={intrestOptions} />
+
 				<TextInput value={name} setValue={setName} label='Twoje imię' />
 			</div>
 			<div className='w-full text-neutral-100'>

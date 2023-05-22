@@ -25,3 +25,5 @@ export type Project = {
 	description: string
 	images: ProjectImage[]
 }
+
+export type SelectOptionType = { value: any; label: string }
