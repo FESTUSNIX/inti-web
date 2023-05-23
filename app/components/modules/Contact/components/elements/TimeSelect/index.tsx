@@ -19,7 +19,7 @@ const TimeSelect = ({ value, setValue, label }: Props) => {
 	const [active, setActive] = useState(false)
 
 	return (
-		<div className='relative'>
+		<div className='relative grow'>
 			<Label active={active} setActive={setActive} value={value} label={label} />
 
 			<TimeMenu setValue={setValue} value={value} active={active} setActive={setActive} />

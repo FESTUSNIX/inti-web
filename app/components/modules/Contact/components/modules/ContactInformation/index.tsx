@@ -4,19 +4,19 @@ import { FaEnvelope, FaPhone, FaInstagram, FaFacebook, FaTiktok, FaTwitter } fro
 
 const ContactInformation = () => {
 	return (
-		<div>
-			<h2 className='mb-16 text-5xl font-bold text-neutral-50'>
+		<div className='grow basis-1/2'>
+			<h2 className='mb-16 text-5xl font-bold text-neutral-50 md:text-6xl 2xl:text-7xl'>
 				Let&apos;s level up your&nbsp;
 				<span className='inline-block'>brand&nbsp;</span>
 				<span className='inline bg-gradient-brand bg-clip-text text-transparent'>together!</span>
 			</h2>
 
-			<div className='flex flex-col gap-4'>
-				<div className='flex items-center gap-5 rounded-lg border border-dark-700/20 bg-dark-800/20 px-4 py-3 text-lg text-neutral-300'>
+			<div className='flex flex-col gap-4 md:flex-row lg:flex-col xl:mr-24 2xl:mr-48'>
+				<div className='flex grow items-center gap-5 rounded-lg border border-dark-700/20 bg-dark-800/20 px-4 py-3 text-lg text-neutral-300'>
 					<FaPhone size={22} />
 					<span>+48 733 270 906</span>
 				</div>
-				<div className='flex items-center gap-5 rounded-lg border border-dark-700/20 bg-dark-800/20 px-4 py-3 text-lg text-neutral-300'>
+				<div className='flex grow items-center gap-5 rounded-lg border border-dark-700/20 bg-dark-800/20 px-4 py-3 text-lg text-neutral-300'>
 					<FaEnvelope size={22} />
 					<span>contact@intiweb.com</span>
 				</div>
