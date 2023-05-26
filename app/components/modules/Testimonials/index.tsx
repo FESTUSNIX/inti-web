@@ -24,7 +24,7 @@ const Testimonials = () => {
 	}
 
 	return (
-		<section className=' my-32'>
+		<section className='my-32'>
 			<Swiper
 				spaceBetween={isMD ? 28 : 10}
 				slidesPerView={responsiveSlidesPerView()}

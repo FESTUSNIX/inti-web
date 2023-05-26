@@ -4,7 +4,7 @@ import { FaEnvelope, FaPhone, FaInstagram, FaFacebook, FaTiktok, FaTwitter } fro
 
 const ContactInformation = () => {
 	return (
-		<div className='grow basis-1/2'>
+		<div className='flex grow basis-1/2 flex-col'>
 			<h2 className='mb-16 text-5xl font-bold text-neutral-50 md:text-6xl 2xl:text-7xl'>
 				Let&apos;s level up your&nbsp;
 				<span className='inline-block'>brand&nbsp;</span>
@@ -22,7 +22,7 @@ const ContactInformation = () => {
 				</div>
 			</div>
 
-			<div className='mt-8 flex max-sm:justify-between sm:gap-8'>
+			<div className='mt-8 flex max-sm:justify-between sm:gap-8 lg:mt-auto'>
 				<Link
 					href={''}
 					className='rounded-full border border-transparent p-3 text-neutral-400 duration-300 hover:border-dark-700/20 hover:bg-dark-800/20'>

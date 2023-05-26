@@ -74,7 +74,7 @@ body {
 
 	@screen 3xl {
 		.wrapper {
-			max-width: 1200px;
+			max-width: 1280px;
 		}
 	}
 
@@ -107,4 +107,14 @@ body {
 
 .swiper .swiper-wrapper .swiper-slide {
 	height: auto;
+}
+
+.gradient-blob-1 {
+	/* Ellipse 4 */
+
+	width: 599.25px;
+	height: 592px;
+
+	background: linear-gradient(125.33deg, rgba(117, 0, 255, 0.3) 13.71%, rgba(48, 0, 155, 0.3) 89.79%);
+	filter: blur(160px);
 }

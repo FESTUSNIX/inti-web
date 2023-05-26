@@ -13,14 +13,16 @@ const Tabs = ({ activeTab, setActiveTab }: Props) => {
 	]
 
 	return (
-		<div className='mb-6 flex items-center border-b border-dark-700/20'>
-			{tabs.map((tab, index) => (
+		<div className='z-10 flex items-center max-sm:border-b max-sm:border-dark-700/20'>
+			{tabs.map(tab => (
 				<button
 					onClick={() => setActiveTab(tab.value)}
 					key={tab.value}
 					className={clsx(
-						'border border-dark-700/20 border-b-transparent bg-dark-800/20 px-6 py-2.5 text-neutral-200 duration-300 first:rounded-tl-lg last:rounded-tr-lg last:border-l-transparent',
-						activeTab === tab.value ? 'opacity-100' : 'opacity-50 hover:bg-dark-800/40 active:opacity-60'
+						'translate-y-px border border-dark-700/20 border-b-transparent bg-dark-800/20 px-6 py-2.5 text-neutral-200 duration-300 first:rounded-tl-lg last:rounded-tr-lg last:border-l-transparent',
+						activeTab === tab.value
+							? 'border-b-[#100e14] opacity-100'
+							: 'opacity-50 hover:bg-dark-800/40 active:opacity-60'
 					)}>
 					{tab.label}
 				</button>

@@ -5,6 +5,7 @@ import Portfolio from './components/modules/Portfolio'
 import Testimonials from './components/modules/Testimonials'
 import FAQ from './components/modules/FAQ'
 import Contact from './components/modules/Contact'
+import Footer from './components/modules/Footer'
 
 export default function Home() {
 	return (
@@ -16,9 +17,7 @@ export default function Home() {
 			<Testimonials />
 			<FAQ />
 			<Contact />
-			<div className='h-96'></div>
-
-			{/* <div className='fixed left-1/2 top-0 h-screen w-px -translate-x-1/2 bg-[#ff0000]'></div> */}
+			<Footer />
 		</main>
 	)
 }

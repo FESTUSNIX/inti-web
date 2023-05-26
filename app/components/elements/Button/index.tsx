@@ -4,11 +4,12 @@ type Props = {
 	children: React.ReactNode
 	className?: string
 	theme?: BtnTheme
+	onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 type BtnTheme = 'primary' | 'secondary' | 'CTA' | 'CTASecondary'
 
-const Button = ({ children, className, theme = 'primary' }: Props) => {
+const Button = ({ children, className, theme = 'primary', onClick }: Props) => {
 	const styles = {
 		primary: 'bg-neutral-100 text-dark-900 hover:bg-neutral-200',
 		secondary: 'bg-transparent text-neutral-100 border border-neutral-100 hover:border-neutral-200',
@@ -19,6 +20,7 @@ const Button = ({ children, className, theme = 'primary' }: Props) => {
 
 	return (
 		<button
+			onClick={onClick}
 			className={`relative min-w-max rounded-lg px-7 py-5 text-sm font-bold uppercase duration-300 ${styles[theme]} ${className}`}>
 			{children}
 		</button>

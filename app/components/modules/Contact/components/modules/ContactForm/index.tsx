@@ -45,23 +45,25 @@ const ContactForm = () => {
 
 				<TextInput value={name} setValue={setName} label='Twoje imię' />
 			</div>
-			<div className='w-full rounded-lg text-neutral-100 sm:bg-dark-800/20 sm:p-4'>
+			<div className='w-full rounded-lg text-neutral-100'>
 				<Tabs setActiveTab={setActiveTab} activeTab={activeTab} />
 
-				{activeTab === 'email' && (
-					<EmailTab email={email} setEmail={setEmail} message={message} setMessage={setMessage} />
-				)}
+				<div className='rounded-lg rounded-tl-none border-dark-700/20 pt-6 sm:border sm:bg-dark-800/20 sm:p-4 sm:pt-6'>
+					{activeTab === 'email' && (
+						<EmailTab email={email} setEmail={setEmail} message={message} setMessage={setMessage} />
+					)}
 
-				{activeTab === 'phone' && (
-					<PhoneTab
-						phoneNumber={phoneNumber}
-						setPhoneNumber={setPhoneNumber}
-						endTime={endTime}
-						setEndTime={setEndTime}
-						startTime={startTime}
-						setStartTime={setStartTime}
-					/>
-				)}
+					{activeTab === 'phone' && (
+						<PhoneTab
+							phoneNumber={phoneNumber}
+							setPhoneNumber={setPhoneNumber}
+							endTime={endTime}
+							setEndTime={setEndTime}
+							startTime={startTime}
+							setStartTime={setStartTime}
+						/>
+					)}
+				</div>
 			</div>
 
 			<Button className='mt-16 w-max'>wyślij wiadomość</Button>
