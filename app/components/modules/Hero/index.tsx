@@ -3,7 +3,7 @@ import Button from '../../elements/Button'
 
 const Hero = () => {
 	return (
-		<header className='wrapper mb-24 flex flex-col pt-16 md:mb-48 md:flex-row md:gap-16 md:pt-32 lg:mb-48 lg:pt-32 xl:mb-64'>
+		<header className='wrapper mb-4 flex min-h-[calc(100vh-84px)] flex-col items-center py-16 md:flex-row md:gap-16 md:py-32 lg:py-32'>
 			<div className='basis-3/5'>
 				<h1 className='mb-4 max-w-full font-heading text-5xl font-black text-neutral-50 lg:text-7xl'>
 					<span>Sięgaj&nbsp;</span>
