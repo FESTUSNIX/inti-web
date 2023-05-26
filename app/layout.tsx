@@ -1,3 +1,4 @@
+import Footer from './components/modules/Footer'
 import Navbar from './components/modules/Navbar'
 import './globals.css'
 import { Outfit, Source_Sans_Pro } from 'next/font/google'
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body suppressHydrationWarning={true}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
