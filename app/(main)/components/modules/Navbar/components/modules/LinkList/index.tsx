@@ -6,7 +6,6 @@ const LinkList = () => {
 		<ul className='hidden items-center gap-4 md:flex lg:gap-8 xl:gap-12'>
 			{[
 				['oferta', '/offer'],
-				['portfolio', '/portfolio'],
 				['o nas', '/about-us'],
 				['kontakt', '/contact']
 			].map(([displayName, link]: string[]) => (
