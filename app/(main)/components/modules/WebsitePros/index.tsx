@@ -1,6 +1,5 @@
 import React from 'react'
 import SectionHeading from '../../elements/SectionHeading'
-import Card from './components/modules/Card'
 import Cards from './components/modules/Cards'
 
 const WebsitePros = () => {
@@ -10,9 +9,7 @@ const WebsitePros = () => {
 				<SectionHeading>Strona internetowa to świetna inwestycja, zobacz dlaczego:</SectionHeading>
 
 				<p className='text-neutral-400'>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, perspiciatis? Mollitia maiores molestiae
-					explicabo dolore! Fugit, harum? Beatae, nesciunt id unde omnis dolorem ratione veritatis ducimus neque
-					voluptates, nobis, veniam ab. Aperiam.
+				Dedykowana strona internetowa to inwestycja na dłuższą metę. Choć może wiązać się z pewnymi kosztami na początku, to daje Ci platformę, która będzie służyć Twojej firmie przez wiele lat. Pieniądz można odrobić, a nowo pozyskany klient zostanie z Tobą na długo.
 				</p>
 			</div>
 			
