@@ -1,25 +1,12 @@
-'use client'
+import React from 'react'
+import ClientWrapper from './components/elements/ClientWrapper'
+import { getPortfolioDefaultText, getProjects } from '@/sanity/sanity-utils'
 
-import React, { useRef, useState } from 'react'
+const Portfolio = async () => {
+	const projects = await getProjects()
+	const defaultText = await getPortfolioDefaultText()
 
-import { useScrollPosition } from '@/app/(main)/hooks/useScrollPosition'
-import ProjectText from './components/modules/ProjectText'
-import ImagesContainer from './components/modules/ImagesContainer'
-import ScrollProgress from './components/elements/ScrollProgress'
-
-const Portfolio = () => {
-	//  DO NOT DELETE - Somehow it doesn't work without it
-	const ancientMagicThatKeepsThisComponentWorking = useScrollPosition()
-
-	const [currentProject, setCurrentProject] = useState(0)
-	const sectionElement = useRef<HTMLDivElement>(null)
-	return (
-		<section className='wrapper relative flex flex-col lg:flex-row' ref={sectionElement}>
-			<ProjectText sectionElement={sectionElement} currentProjectIndex={currentProject} />
-
-			<ImagesContainer setCurrentProject={setCurrentProject} sectionElement={sectionElement} />
-		</section>
-	)
+	return <ClientWrapper projects={projects} defaultText={defaultText} />
 }
 
 export default Portfolio

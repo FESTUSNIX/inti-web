@@ -1,15 +1,15 @@
-'use client'
-
 import React from 'react'
 import ProjectImages from '../ProjectImages'
-import { projects } from '../../../assets/exampleProjects'
+import { Project } from '@/types/Project'
 
 type Props = {
+	projects: Project[]
+	currentProject: number
 	setCurrentProject: React.Dispatch<React.SetStateAction<number>>
 	sectionElement: React.RefObject<HTMLDivElement>
 }
 
-const ImagesContainer = ({ setCurrentProject, sectionElement }: Props) => {
+const ImagesContainer = ({ setCurrentProject, sectionElement, currentProject, projects }: Props) => {
 	return (
 		<div className='flex flex-col lg:basis-3/5 lg:pl-12'>
 			{projects.map((project, index) => (
@@ -19,6 +19,7 @@ const ImagesContainer = ({ setCurrentProject, sectionElement }: Props) => {
 					project={project}
 					setCurrentProject={setCurrentProject}
 					sectionElement={sectionElement}
+					currentProject={currentProject}
 				/>
 			))}
 		</div>

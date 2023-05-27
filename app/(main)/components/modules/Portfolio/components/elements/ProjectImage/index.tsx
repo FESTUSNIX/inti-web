@@ -3,24 +3,15 @@
 import React from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { ProjectImage as ProjectImageType } from '@/types/types'
+import { ProjectImage as ProjectImageType } from '@/types/Project'
+import { sanityUrlFor } from '@/sanity/sanity-utils'
 
 type Props = ProjectImageType & {
 	projectSectionRef: React.RefObject<HTMLDivElement>
 	sectionElement: React.RefObject<HTMLDivElement>
 }
 
-const ProjectImage = ({
-	projectSectionRef,
-	sectionElement,
-	bottom,
-	left,
-	right,
-	maxWidth,
-	speed,
-	image,
-	alt = ''
-}: Props) => {
+const ProjectImage = ({ projectSectionRef, sectionElement, bottom, left, right, maxWidth, speed, image }: Props) => {
 	const { scrollY } = useScroll()
 
 	const springTransition = useSpring(scrollY, {
@@ -36,7 +27,7 @@ const ProjectImage = ({
 
 	return (
 		<motion.div style={{ y: transformedY, bottom, maxWidth, left, right }} className={`absolute`}>
-			<Image src={image} alt={alt} />
+			<Image src={sanityUrlFor(image).url()} alt={image.alt} width={900} height={900} />
 		</motion.div>
 	)
 }
