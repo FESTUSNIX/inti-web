@@ -20,8 +20,7 @@ import {
 	singleValueStyles,
 	valueContainerStyles
 } from './styles'
-
-type SelectOptionType = { label: string; value: any }
+import { SelectOptionType } from '@/types/global'
 
 type Props = {
 	setValue: React.Dispatch<React.SetStateAction<string>>
