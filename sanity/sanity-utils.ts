@@ -3,18 +3,38 @@ import { createClient, groq } from 'next-sanity'
 import clientConfig from './config/client-config'
 import { BasicCard } from '@/types/BasicCard'
 import { Testimonial } from '@/types/Testimonial'
+import imageUrlBuilder from '@sanity/image-url'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+
+const imageBuilder = imageUrlBuilder(clientConfig)
+
+export function sanityUrlFor(source: SanityImageSource) {
+	return imageBuilder.image(source)
+}
 
 export async function getProjects(): Promise<Project[]> {
 	return createClient(clientConfig).fetch(
-		groq`*[_type == "project"]{
+		groq`*[_type == "project" && isDefault != true]{
             _id,
             _createdAt,
+            isDefault,
             name,
+            description,
             "slug": slug.current,
-            "image": image.asset->url,
-            url,
-            content
+            "images": images
         }`
+	)
+}
+
+export async function getPortfolioDefaultText(): Promise<Project> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "project" && isDefault == true]{
+            _id,
+            _createdAt,
+            isDefault,
+            name,
+            description,
+        }[0]`
 	)
 }
 
