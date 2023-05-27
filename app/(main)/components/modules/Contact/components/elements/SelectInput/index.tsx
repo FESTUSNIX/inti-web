@@ -20,14 +20,13 @@ import {
 	singleValueStyles,
 	valueContainerStyles
 } from './styles'
-import { SelectOptionType } from '@/types/global'
 
-type SelectOptions = SelectOptionType[]
+type SelectOptionType = { label: string; value: any }
 
 type Props = {
 	setValue: React.Dispatch<React.SetStateAction<string>>
 	placeholder: string
-	options: SelectOptions
+	options: SelectOptionType[]
 	defaultValueIndex?: number
 	isSearchable?: boolean
 	isMulti?: boolean
