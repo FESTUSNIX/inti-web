@@ -24,7 +24,6 @@ const ProjectImages = ({ index, project, setCurrentProject, sectionElement, curr
 			element.current.getBoundingClientRect()?.bottom - window.innerHeight / 2 > 0 &&
 			currentProject !== index
 		) {
-			console.log('setting index', currentProject, index)
 			setCurrentProject(index)
 		}
 	}

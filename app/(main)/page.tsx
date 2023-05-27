@@ -12,6 +12,7 @@ export default function Home() {
 			<Hero />
 			<WebsitePros />
 			<OurAdvantages />
+			{/* @ts-expect-error Server Component */}
 			<Portfolio />
 			{/* @ts-expect-error Server Component */}
 			<Testimonials />

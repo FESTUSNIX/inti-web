@@ -20,7 +20,7 @@ import {
 	singleValueStyles,
 	valueContainerStyles
 } from './styles'
-import { SelectOptionType } from '@/types/types'
+import { SelectOptionType } from '@/types/global'
 
 type SelectOptions = SelectOptionType[]
 

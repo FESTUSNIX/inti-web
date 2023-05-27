@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import ProjectText from '../../../components/modules/ProjectText'
 import ImagesContainer from '../../../components/modules/ImagesContainer'
 import { Project } from '@/types/Project'
@@ -13,10 +13,6 @@ type Props = {
 const ClientWrapper = ({ projects, defaultText }: Props) => {
 	const [currentProject, setCurrentProject] = useState(0)
 	const sectionElement = useRef<HTMLDivElement>(null)
-
-	useEffect(() => {
-		console.log(currentProject)
-	}, [currentProject])
 
 	return (
 		<section className='wrapper relative flex flex-col lg:flex-row' ref={sectionElement}>
