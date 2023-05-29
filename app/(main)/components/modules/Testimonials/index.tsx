@@ -6,7 +6,7 @@ const Testimonials = async () => {
 	const testimonials = await getTestimonials()
 
 	return (
-		<section className='my-32'>
+		<section className='my-48'>
 			<Slider testimonials={testimonials} />
 		</section>
 	)
