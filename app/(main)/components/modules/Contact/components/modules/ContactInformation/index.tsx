@@ -2,14 +2,27 @@ import React from 'react'
 import Link from 'next/link'
 import { FaEnvelope, FaPhone, FaInstagram, FaFacebook, FaTiktok, FaTwitter } from 'react-icons/fa'
 
-const ContactInformation = () => {
+type Props = {
+	headingType?: 'h2' | 'h1'
+}
+
+const ContactInformation = ({ headingType = 'h2' }: Props) => {
 	return (
 		<div className='flex grow basis-1/2 flex-col'>
-			<h2 className='mb-16 text-5xl font-bold text-neutral-50 md:text-6xl 2xl:text-7xl'>
-				Let&apos;s level up your&nbsp;
-				<span className='inline-block'>brand&nbsp;</span>
-				<span className='inline bg-gradient-brand bg-clip-text text-transparent'>together!</span>
-			</h2>
+			{headingType === 'h2' && (
+				<h2 className='mb-16 text-5xl font-bold text-neutral-50 md:text-6xl 2xl:text-7xl'>
+					Let&apos;s level up your&nbsp;
+					<span className='inline-block'>brand&nbsp;</span>
+					<span className='inline bg-gradient-brand bg-clip-text text-transparent'>together!</span>
+				</h2>
+			)}
+			{headingType === 'h1' && (
+				<h1 className='mb-16 text-5xl font-bold text-neutral-50 md:text-6xl 2xl:text-7xl'>
+					Let&apos;s level up your&nbsp;
+					<span className='inline-block'>brand&nbsp;</span>
+					<span className='inline bg-gradient-brand bg-clip-text text-transparent'>together!</span>
+				</h1>
+			)}
 
 			<div className='flex flex-col gap-4 md:flex-row lg:flex-col xl:mr-24 2xl:mr-48'>
 				<div className='flex grow items-center gap-5 rounded-lg border border-dark-700/20 bg-dark-800/20 px-4 py-3 text-lg text-neutral-300'>
@@ -24,25 +37,25 @@ const ContactInformation = () => {
 
 			<div className='mt-8 flex max-sm:justify-between sm:gap-8 lg:mt-auto'>
 				<Link
-				aria-label='Our Instagram'
+					aria-label='Our Instagram'
 					href={''}
 					className='rounded-full border border-transparent p-3 text-neutral-400 duration-300 hover:border-dark-700/20 hover:bg-dark-800/20'>
 					<FaInstagram size={24} />
 				</Link>
 				<Link
-				aria-label='Our Facebook'
+					aria-label='Our Facebook'
 					href={''}
 					className='rounded-full border border-transparent p-3 text-neutral-400 duration-300 hover:border-dark-700/20 hover:bg-dark-800/20'>
 					<FaFacebook size={24} />
 				</Link>
 				<Link
-				aria-label='Our Twitter'
+					aria-label='Our Twitter'
 					href={''}
 					className='rounded-full border border-transparent p-3 text-neutral-400 duration-300 hover:border-dark-700/20 hover:bg-dark-800/20'>
 					<FaTwitter size={24} />
 				</Link>
 				<Link
-				aria-label='Our TikTok'
+					aria-label='Our TikTok'
 					href={''}
 					className='rounded-full border border-transparent p-3 text-neutral-400 duration-300 hover:border-dark-700/20 hover:bg-dark-800/20'>
 					<FaTiktok size={24} />
