@@ -39,7 +39,13 @@ const ContactForm = () => {
 	return (
 		<div className='flex grow basis-1/2 flex-col rounded-lg md:bg-dark-800/20 md:p-4 xl:p-8'>
 			<div className='mb-12 flex flex-col gap-6'>
-				<SelectInput isMulti setValue={setIntrest} placeholder='Interesuje mnie...' options={intrestOptions} />
+				<SelectInput
+					ariaLabel='Wybierz temat rozmowy'
+					isMulti
+					setValue={setIntrest}
+					placeholder='Interesuje mnie...'
+					options={intrestOptions}
+				/>
 
 				<TextInput value={name} setValue={setName} label='Twoje imię' />
 			</div>

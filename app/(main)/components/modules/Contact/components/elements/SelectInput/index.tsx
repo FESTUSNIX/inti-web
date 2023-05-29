@@ -29,6 +29,7 @@ type Props = {
 	defaultValueIndex?: number
 	isSearchable?: boolean
 	isMulti?: boolean
+	ariaLabel: string
 }
 
 const SelectInput = ({
@@ -37,7 +38,8 @@ const SelectInput = ({
 	options,
 	defaultValueIndex,
 	isMulti = false,
-	isSearchable = true
+	isSearchable = true,
+	ariaLabel
 }: Props) => {
 	return (
 		<Select
@@ -48,6 +50,7 @@ const SelectInput = ({
 			options={options}
 			isSearchable={isSearchable}
 			isMulti={isMulti}
+			aria-label={ariaLabel}
 			onChange={(selectedOption: MultiValue<SelectOptionType> | SingleValue<SelectOptionType>) =>
 				setValue(
 					isMulti
