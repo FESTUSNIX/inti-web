@@ -3,7 +3,7 @@ import Button from '../../elements/Button'
 
 const Hero = () => {
 	return (
-		<header className='wrapper mb-4 flex min-h-[calc(100vh-84px)] flex-col items-center py-16 md:flex-row md:gap-16 md:py-24'>
+		<header className='wrapper mb-4 mt-24 flex min-h-[calc(100vh-84px)] flex-col items-center py-16 md:flex-row md:gap-16 md:py-24'>
 			<div className='max-w-full basis-3/5'>
 				<h1 className='mb-4 max-w-full font-heading text-4xl font-black capitalize text-neutral-50 sm:text-5xl lg:text-6xl lg:leading-tight'>
 					<span>Wyprzedź&nbsp;</span>
