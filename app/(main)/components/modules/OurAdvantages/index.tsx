@@ -1,10 +1,10 @@
-'use client'
-
 import React from 'react'
 import SectionHeading from '../../elements/SectionHeading'
 import Cards from './components/modules/Cards'
 
 const OurAdvantages = () => {
+	console.log('refresh')
+
 	return (
 		<section className='relative mb-32 border-y border-dark-700/20 bg-dark-800/20 py-12'>
 			<div className='wrapper flex flex-col lg:gap-16'>
