@@ -1,14 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
+import { pageLinks } from '../../../constants/pageLinks'
 
 const LinkList = () => {
 	return (
 		<ul className='hidden items-center gap-4 md:flex lg:gap-8 xl:gap-12'>
-			{[
-				['oferta', '/offer'],
-				['o nas', '/about-us'],
-				['kontakt', '/contact']
-			].map(([displayName, link]: string[]) => (
+			{pageLinks.map(([displayName, link]: string[]) => (
 				<li key={link} className='group relative cursor-pointer'>
 					<Link
 						href={link}

@@ -1,22 +1,18 @@
+import { pageLinks } from '@/app/(main)/components/modules/Navbar/constants/pageLinks'
 import Link from 'next/link'
 import React from 'react'
 
 const Menu = () => {
 	return (
-		<div className='fixed inset-0 bg-dark-800/20 backdrop-blur-md flex justify-center items-center z-40'>
+		<div className='fixed inset-0 z-40 flex items-center justify-center bg-dark-800/20 backdrop-blur-md'>
 			<ul className='flex flex-col gap-4 '>
-				{[
-					['oferta', '/offer'],
-					['portfolio', '/portfolio'],
-					['o nas', '/about-us'],
-					['kontakt', '/contact']
-				].map(([displayName, link]: string[], index) => (
+				{pageLinks.map(([displayName, link]: string[], index) => (
 					<li key={link}>
 						<Link
 							href={link}
-							className='relative group flex items-center uppercase text-4xl w-max font-black px-4 cursor-pointer'>
-							<div className='absolute left-0 w-full h-2 top-1/2 -translate-y-1/2 bg-gradient-brand duration-300 scale-x-0 origin-right group-hover:scale-x-100'></div>
-							<span className='text-neutral-400 mr-4 h-full'>
+							className='group relative flex w-max cursor-pointer items-center px-4 text-4xl font-black uppercase'>
+							<div className='absolute left-0 top-1/2 h-2 w-full origin-right -translate-y-1/2 scale-x-0 bg-gradient-brand duration-300 group-hover:scale-x-100'></div>
+							<span className='mr-4 h-full text-neutral-400'>
 								<svg height='30' width='40'>
 									<text
 										x='50%'
