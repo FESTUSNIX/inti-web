@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en' className={`${outfit.variable} ${sourceSansPro.variable}`}>
 			<body suppressHydrationWarning={true}>
 				<Navbar />
-				{children}
+				<main>{children}</main>
 				<Footer />
 			</body>
 		</html>

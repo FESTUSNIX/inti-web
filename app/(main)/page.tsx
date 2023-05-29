@@ -8,7 +8,7 @@ import Contact from './components/modules/Contact'
 
 export default function Home() {
 	return (
-		<main className='mt-24 overflow-hidden'>
+		<div className='overflow-hidden'>
 			<Hero />
 			<WebsitePros />
 			<OurAdvantages />
@@ -19,6 +19,6 @@ export default function Home() {
 			{/* @ts-expect-error Server Component */}
 			<FAQ />
 			<Contact />
-		</main>
+		</div>
 	)
 }
