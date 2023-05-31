@@ -104,6 +104,10 @@ body {
 	.overflow-y-overlay {
 		overflow-y: overlay;
 	}
+
+	.text-gradient {
+		@apply bg-gradient-brand bg-clip-text text-transparent;
+	}
 }
 
 .swiper .swiper-wrapper .swiper-slide {
