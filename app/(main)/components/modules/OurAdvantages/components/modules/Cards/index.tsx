@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../Card'
-import { getOurAdvantagesCards } from '@/sanity/sanity-utils'
+import { getOurAdvantagesCards } from '@/sanity/sanityUtils'
 
 const Cards = async () => {
 	const cards = await getOurAdvantagesCards()

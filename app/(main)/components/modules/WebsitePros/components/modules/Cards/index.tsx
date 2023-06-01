@@ -1,4 +1,4 @@
-import { getWebsiteProsCards } from '@/sanity/sanity-utils'
+import { getWebsiteProsCards } from '@/sanity/sanityUtils'
 import React from 'react'
 import Card from '../Card'
 

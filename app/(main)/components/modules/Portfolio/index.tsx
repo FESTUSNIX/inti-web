@@ -1,6 +1,6 @@
 import React from 'react'
 import ClientWrapper from './components/elements/ClientWrapper'
-import { getPortfolioDefaultText, getProjects } from '@/sanity/sanity-utils'
+import { getPortfolioDefaultText, getProjects } from '@/sanity/sanityUtils'
 
 const Portfolio = async () => {
 	const projects = await getProjects()

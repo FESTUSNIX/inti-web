@@ -4,7 +4,7 @@ import React from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { ProjectImage as ProjectImageType } from '@/types/Project'
-import { sanityUrlFor } from '@/sanity/sanity-utils'
+import { sanityUrlFor } from '@/sanity/sanityUtils'
 
 type Props = ProjectImageType & {
 	projectSectionRef: React.RefObject<HTMLDivElement>

@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionHeading from '../../elements/SectionHeading'
 import Accordion from './components/modules/Accordion'
-import { getFAQCards } from '@/sanity/sanity-utils'
+import { getFAQCards } from '@/sanity/sanityUtils'
 
 const FAQ = async () => {
 	const cards = await getFAQCards()

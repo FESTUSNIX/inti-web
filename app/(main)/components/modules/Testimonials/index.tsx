@@ -1,5 +1,5 @@
 import React from 'react'
-import { getTestimonials } from '@/sanity/sanity-utils'
+import { getTestimonials } from '@/sanity/sanityUtils'
 import Slider from './components/modules/Slider'
 
 const Testimonials = async () => {
