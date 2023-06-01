@@ -1,4 +1,5 @@
 import { PortableTextBlock } from 'sanity'
+import { ImageAsset } from './global'
 
 type LeftOrRight = { left: string; right?: never } | { left?: never; right: string }
 
@@ -8,10 +9,7 @@ export type ProjectImage = {
 	speed: number
 	image: {
 		alt: string
-		asset: {
-			_ref: string
-			_type: string
-		}
+		asset: ImageAsset
 		_type: string
 	}
 	_key: string
