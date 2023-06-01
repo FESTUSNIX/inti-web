@@ -5,6 +5,7 @@ import { BasicCard } from '@/types/BasicCard'
 import { Testimonial } from '@/types/Testimonial'
 import imageUrlBuilder from '@sanity/image-url'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { TeamMember } from '@/types/TeamMember'
 
 const imageBuilder = imageUrlBuilder(clientConfig)
 
@@ -81,5 +82,29 @@ export async function getTestimonials(): Promise<Testimonial[]> {
             "image": image.asset->url,
             content,
         }`
+	)
+}
+
+export async function getTeamMembers(): Promise<TeamMember[]> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "teamMember"]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            quote,
+            socialMedia,
+        }`
+	)
+}
+
+export async function getSingletonAboutUs(): Promise<any> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "aboutUs"]{
+            _id,
+            _createdAt,
+            aboutUsMarquees,
+            "aboutUsImages": aboutUsImages
+        }[0]`
 	)
 }

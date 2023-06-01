@@ -1,9 +1,11 @@
-import faqCard from './faq-card-schema'
-import ourAdvantagesCard from './our-advantages-card.schema'
-import project from './project-schema'
-import testimonial from './testimonial-schema'
-import websiteProsCard from './website-pros-card-schema'
+import singletonAbout from './singletonAboutUs'
+import faqCard from './faqCard'
+import ourAdvantagesCard from './ourAdvantagesCard'
+import project from './portfolioProject'
+import testimonial from './testimonial'
+import websiteProsCard from './websiteProsCard'
+import teamMembers from './teamMembers'
 
-const schemas = [project, websiteProsCard, ourAdvantagesCard, faqCard, testimonial]
+const schemas = [project, websiteProsCard, ourAdvantagesCard, faqCard, testimonial, singletonAbout, teamMembers]
 
 export default schemas
