@@ -11,7 +11,7 @@ const Menu = () => {
 						<Link
 							href={link}
 							className='group relative flex w-max cursor-pointer items-center px-4 text-4xl font-black uppercase'>
-							<div className='absolute left-0 top-1/2 h-2 w-full origin-right -translate-y-1/2 scale-x-0 bg-gradient-brand duration-300 group-hover:scale-x-100'></div>
+							<div className='pointer-events-none absolute left-0 top-1/2 h-2 w-full origin-right -translate-y-1/2 scale-x-0 bg-gradient-brand duration-300 group-hover:scale-x-100'></div>
 							<span className='mr-4 h-full text-neutral-400'>
 								<svg height='30' width='40'>
 									<text
