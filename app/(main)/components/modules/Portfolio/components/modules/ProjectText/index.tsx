@@ -84,7 +84,7 @@ const ProjectText = ({ sectionElement, currentProjectIndex, projects, defaultTex
 				}`}
 				style={{ width: sectionElement?.current?.offsetWidth! * (isLG ? 0.4 : 1) }}>
 				<div>
-					<SectionHeading>{currentProject.name}</SectionHeading>
+					<SectionHeading label='portfolio'>{currentProject.name}</SectionHeading>
 					<PortableText content={currentProject.description} className='mb-4 text-neutral-400' />
 				</div>
 

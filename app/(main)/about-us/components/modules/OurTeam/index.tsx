@@ -21,12 +21,7 @@ const OurTeam = ({ teamMembers, aboutUsData }: Props) => {
 	return (
 		<section className='wrapper flex flex-col lg:flex-row'>
 			<div className='basis-2/5'>
-				<div>
-					<h3 className='bg-gradient-brand bg-clip-text font-heading text-sm font-bold uppercase tracking-widest text-transparent'>
-						nasz team
-					</h3>
-					<SectionHeading>Kim jesteśmy</SectionHeading>
-				</div>
+				<SectionHeading label='nasz team'>Kim jesteśmy</SectionHeading>
 
 				<div className='my-16 flex flex-col gap-8'>
 					{teamMembers.map(person => (

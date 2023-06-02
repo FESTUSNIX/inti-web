@@ -8,7 +8,9 @@ const FAQ = async () => {
 
 	return (
 		<section className='wrapper mb-24'>
-			<SectionHeading className='priority:mb-8'>Często zadawane pytania</SectionHeading>
+			<SectionHeading className='priority:mb-8' label='FAQ'>
+				Często zadawane pytania
+			</SectionHeading>
 
 			<Accordion cards={cards} />
 		</section>
