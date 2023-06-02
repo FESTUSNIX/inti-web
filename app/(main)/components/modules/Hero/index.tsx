@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from '../../elements/Button'
+import heroImg from './assets/hero.png'
+import Image from 'next/image'
 
 const Hero = () => {
 	return (
@@ -28,8 +30,9 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='mt-4 flex h-72 w-full basis-2/5 items-center justify-center bg-neutral-300 text-dark-900'>
-				placeholder for image
+			<div className='relative mt-4 flex w-full basis-2/5'>
+				<Image src={heroImg} alt='us coding' className='relative left-0 top-1/2 scale-125' />
+				<div className='gradient-blob-2 absolute min-h-full min-w-full scale-[1.5]'></div>
 			</div>
 		</header>
 	)
