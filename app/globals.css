@@ -43,7 +43,6 @@ html {
 body {
 	min-height: 100vh;
 	width: 100%;
-	background-color: theme(colors.background);
 	color: #ff0000;
 	overflow-x: hidden;
 	overflow-y: overlay;
@@ -113,13 +112,29 @@ body {
 .swiper .swiper-wrapper .swiper-slide {
 	height: auto;
 }
+.blob {
+	position: absolute;
+	border-radius: 9999px;
+	z-index: -50;
+}
 
-.gradient-blob-1 {
-	/* Ellipse 4 */
-
+.blob-our-advantages-1 {
 	width: 599.25px;
 	height: 592px;
-
 	background: linear-gradient(125.33deg, rgba(117, 0, 255, 0.3) 13.71%, rgba(48, 0, 155, 0.3) 89.79%);
 	filter: blur(160px);
+}
+.gradient-blob-2 {
+	background: linear-gradient(8.36deg, rgba(100, 0, 255, 0.2) 7.82%, rgba(95, 30, 222, 0.2) 92.11%);
+	filter: blur(120px);
+}
+
+.blob-website-pros {
+	background: linear-gradient(156.65deg, rgb(67, 20, 73, 0.6) 8.59%, rgb(43, 17, 69, 0.7) 71.63%);
+	filter: blur(90px);
+}
+
+.blob-our-advantages-2 {
+	background: #444cf7;
+	filter: blur(154px);
 }
