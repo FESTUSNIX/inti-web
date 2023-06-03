@@ -93,6 +93,8 @@ const ProjectText = ({ sectionElement, currentProjectIndex, projects, defaultTex
 				<div className='relative'>
 					<ScrollProgress sectionElement={sectionElement} />
 				</div>
+
+				<div className='blob blob-portfolio-text top-0 aspect-square w-full -translate-x-1/2'></div>
 			</div>
 		</div>
 	)

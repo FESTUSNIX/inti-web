@@ -37,7 +37,7 @@ const ContactForm = () => {
 	const [message, setMessage] = useState('')
 
 	return (
-		<div className='flex grow basis-1/2 flex-col rounded-lg md:bg-dark-800/20 md:p-4 xl:p-8'>
+		<div className='relative z-20 flex grow basis-1/2 flex-col rounded-lg md:bg-dark-800/20 md:p-4 xl:p-8'>
 			<div className='mb-12 flex flex-col gap-6'>
 				<SelectInput
 					ariaLabel='Wybierz temat rozmowy'
@@ -71,6 +71,10 @@ const ContactForm = () => {
 			</div>
 
 			<Button className='mt-16 w-max'>wyślij wiadomość</Button>
+
+			<div className='blob blob-contact-1 inset-0 !z-[0]'></div>
+			<div className='blob blob-contact-2 left-0 top-0 !z-[0] aspect-square w-1/2'></div>
+			<div className='blob blob-contact-3 bottom-0 right-0 !z-[0] aspect-square w-1/2'></div>
 		</div>
 	)
 }

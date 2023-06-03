@@ -20,7 +20,7 @@ const OurTeam = ({ teamMembers, aboutUsData }: Props) => {
 
 	return (
 		<section className='wrapper flex flex-col lg:flex-row'>
-			<div className='basis-2/5'>
+			<div className='relative basis-2/5'>
 				<SectionHeading label='nasz team'>Kim jesteśmy</SectionHeading>
 
 				<div className='my-16 flex flex-col gap-8'>
@@ -66,6 +66,8 @@ const OurTeam = ({ teamMembers, aboutUsData }: Props) => {
 						</div>
 					))}
 				</div>
+
+				<div className='blob blob-team-members top-0 aspect-square w-full'></div>
 			</div>
 
 			<div className='grid grow basis-3/5 grid-cols-2 gap-2 lg:ml-12 lg:gap-4'>
