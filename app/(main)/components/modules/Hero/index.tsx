@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Hero = () => {
 	return (
 		<header className='wrapper mb-4 mt-24 flex flex-col items-center gap-16 pb-16 max-lg:pt-24 md:min-h-[calc(100vh-84px)] md:flex-row md:pb-24'>
-			<div className='max-w-full basis-3/4 2xl:basis-3/5'>
+			<div className='z-20 max-w-full basis-3/4 2xl:basis-3/5'>
 				<h1 className='mb-4 max-w-full font-heading text-4xl font-black capitalize text-neutral-50 sm:text-5xl lg:text-6xl lg:leading-tight'>
 					<span>Wyprzedź&nbsp;</span>
 					<span className='inline-block'>konkurencje i&nbsp;</span>
@@ -30,13 +30,13 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='relative -z-10 mt-4 flex w-full basis-1/4 2xl:basis-2/5'>
+			<div className='relative z-10 mt-4 flex w-full basis-1/4 2xl:basis-2/5'>
 				<Image
 					src={heroImg}
 					alt='us coding'
-					className='relative top-1/2 scale-125 md:absolute md:left-0 md:min-w-[340px] md:-translate-y-1/2 md:scale-150 2xl:scale-125'
+					className='relative top-1/2 z-10 scale-125 md:absolute md:left-0 md:min-w-[340px] md:-translate-y-1/2 md:scale-150 2xl:scale-125'
 				/>
-				<div className='blob blob-hero-image aspect-square min-h-full min-w-full scale-150 md:-translate-y-1/2 md:scale-[5] 2xl:scale-150'></div>
+				<div className='blob blob-hero-image z-0 aspect-square min-h-full min-w-full scale-150 md:-translate-y-1/2 md:scale-[5] 2xl:scale-150'></div>
 			</div>
 		</header>
 	)
