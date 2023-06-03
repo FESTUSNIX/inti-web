@@ -42,6 +42,7 @@ const ContactForm = () => {
 				<SelectInput
 					ariaLabel='Wybierz temat rozmowy'
 					isMulti
+					isSearchable={false}
 					setValue={setIntrest}
 					placeholder='Interesuje mnie...'
 					options={intrestOptions}
