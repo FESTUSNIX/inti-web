@@ -1,43 +1,55 @@
 import React from 'react'
 import PhoneInput from '../../elements/PhoneInput'
-import TimeSelect from '../../elements/TimeSelect'
+import { availableHours } from './constants/availableHours'
+import { Field, FormikErrors, FormikTouched } from 'formik'
+import { FormikSelect } from '../../elements/Select'
 
 type Props = {
 	phoneNumber: string
-	setPhoneNumber: React.Dispatch<React.SetStateAction<string>>
-	startTime: {
-		hour: string
-		minutes: string
+	handleChange: {
+		(e: React.ChangeEvent<any>): void
+		<T = string | React.ChangeEvent<any>>(field: T): T extends React.ChangeEvent<any>
+			? void
+			: (e: string | React.ChangeEvent<any>) => void
 	}
-	setStartTime: React.Dispatch<
-		React.SetStateAction<{
-			hour: string
-			minutes: string
-		}>
-	>
-	endTime: {
-		hour: string
-		minutes: string
+	handleBlur: {
+		(e: React.FocusEvent<any, Element>): void
+		<T = any>(fieldOrEvent: T): T extends string ? (e: any) => void : void
 	}
-	setEndTime: React.Dispatch<
-		React.SetStateAction<{
-			hour: string
-			minutes: string
-		}>
-	>
+	errors: FormikErrors<{
+		phone: string
+		preferredHours: string[]
+	}>
+	touched: FormikTouched<{
+		phone: string
+		preferredHours: string[]
+	}>
 }
 
-const PhoneTab = ({ phoneNumber, setPhoneNumber, startTime, setStartTime, endTime, setEndTime }: Props) => {
+const PhoneTab = ({ phoneNumber, handleChange, handleBlur, errors, touched }: Props) => {
 	return (
 		<div>
-			<PhoneInput value={phoneNumber} setValue={setPhoneNumber} />
+			<PhoneInput
+				value={phoneNumber}
+				onChange={handleChange}
+				onBlur={handleBlur}
+				error={errors.phone}
+				touched={touched.phone}
+			/>
 
 			<div className='mt-6'>
-				<p className='mb-2 text-neutral-200'>Najlepszy czas na rozmowe</p>
-				<div className='flex flex-col gap-2 md:flex-row'>
-					<TimeSelect value={startTime} setValue={setStartTime} label='Od' />
-					<TimeSelect value={endTime} setValue={setEndTime} label='Do' />
-				</div>
+				<Field
+					name='preferredHours'
+					component={FormikSelect}
+					options={availableHours}
+					isMulti
+					isSearchable
+					onBlur={handleBlur}
+					ariaLabel='Najlepszy czas na rozmowę'
+					placeholder={'Najlepszy czas na rozmowę'}
+					error={errors.preferredHours}
+					touched={touched.preferredHours}
+				/>
 			</div>
 		</div>
 	)

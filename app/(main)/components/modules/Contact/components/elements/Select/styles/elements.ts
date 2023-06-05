@@ -1,7 +1,8 @@
 export const controlStyles = {
 	base: 'border rounded-lg duration-300 bg-dark-800/20 hover:cursor-pointer py-3 px-4',
 	focus: 'border-dark-700/20',
-	nonFocus: 'border-dark-700/20 hover:border-dark-700/40'
+	nonFocus: 'border-dark-700/20 hover:border-dark-700/40',
+	error: 'border-error error-shake'
 }
 export const placeholderStyles = 'text-neutral-400 py-0.5'
 export const selectInputStyles = 'py-0.5 text-neutral-200'
