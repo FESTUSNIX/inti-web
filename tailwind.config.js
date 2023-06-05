@@ -32,7 +32,8 @@ module.exports = {
 				500: '#737373'
 			},
 			pink: '#9316CE',
-			purple: '#3300FF'
+			purple: '#3300FF',
+			error: '#cf375b'
 		},
 		extend: {
 			backgroundImage: {
