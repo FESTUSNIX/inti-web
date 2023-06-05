@@ -8,14 +8,15 @@ type Props = {
 
 const Tabs = ({ activeTab, setActiveTab }: Props) => {
 	const tabs: { label: string; value: 'email' | 'phone' }[] = [
-		{ label: 'Email', value: 'email' },
-		{ label: 'Telefon', value: 'phone' }
+		{ label: 'Telefon', value: 'phone' },
+		{ label: 'Email', value: 'email' }
 	]
 
 	return (
 		<div className='z-10 flex items-center max-sm:border-b max-sm:border-dark-700/20'>
 			{tabs.map(tab => (
 				<button
+					type='button'
 					onClick={() => setActiveTab(tab.value)}
 					key={tab.value}
 					className={clsx(
