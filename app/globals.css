@@ -134,6 +134,11 @@ body {
 			transform: translate3d(2px, 0, 0);
 		}
 	}
+
+	.offer-heading-text-stroke {
+		-webkit-text-stroke: 1px theme(colors.neutral.50);
+		text-stroke: 1px theme(colors.neutral.50);
+	}
 }
 
 .swiper .swiper-wrapper .swiper-slide {
