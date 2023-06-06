@@ -3,7 +3,7 @@ import Header from './components/modules/Header'
 import OurTeam from './components/modules/OurTeam'
 import { getSingletonAboutUs, getTeamMembers } from '@/sanity/sanityUtils'
 import QuoteSection from './components/modules/QuoteSection'
-import OurMission from './components/modules/OurMission'
+import OurApproach from './components/modules/OurApproach'
 
 const AboutUsPage = async () => {
 	const teamMembers = await getTeamMembers()
@@ -17,7 +17,7 @@ const AboutUsPage = async () => {
 
 			<QuoteSection />
 
-			<OurMission />
+			<OurApproach />
 		</>
 	)
 }
