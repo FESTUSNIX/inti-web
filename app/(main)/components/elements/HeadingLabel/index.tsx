@@ -1,15 +1,15 @@
 import React from 'react'
 
 type Props = {
-	label: string
+	children: React.ReactNode
 	className?: string
 }
 
-const HeadingLabel = ({ label, className }: Props) => {
+const HeadingLabel = ({ children, className }: Props) => {
 	return (
 		<h3
 			className={`inline-block bg-gradient-brand bg-clip-text font-heading text-sm font-bold uppercase tracking-widest text-transparent ${className}`}>
-			{label}
+			{children}
 		</h3>
 	)
 }

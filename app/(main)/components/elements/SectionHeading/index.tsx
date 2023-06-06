@@ -11,7 +11,7 @@ type Props = {
 const SectionHeading = ({ children, className, label, labelClassName }: Props) => {
 	return (
 		<>
-			{label && <HeadingLabel label={label} className={labelClassName} />}
+			{label && <HeadingLabel className={labelClassName}>{label}</HeadingLabel>}
 			<h2 className={`mb-4 font-heading text-2xl font-bold text-neutral-100 md:text-3xl lg:text-4xl ${className}`}>
 				{children}
 			</h2>
