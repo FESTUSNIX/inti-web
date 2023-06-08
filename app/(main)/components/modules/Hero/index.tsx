@@ -34,6 +34,7 @@ const Hero = () => {
 				<Image
 					src={heroImg}
 					alt='us coding'
+					priority
 					className='relative top-1/2 z-10 scale-125 md:absolute md:left-0 md:min-w-[340px] md:-translate-y-1/2 md:scale-150 2xl:scale-125'
 				/>
 				<div className='blob blob-hero-image z-0 aspect-square min-h-full min-w-full scale-150 md:-translate-y-1/2 md:scale-[5] 2xl:scale-150'></div>
