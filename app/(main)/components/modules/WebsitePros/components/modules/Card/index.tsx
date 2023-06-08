@@ -1,4 +1,5 @@
 import PortableText from '@/app/(main)/components/elements/PortableText'
+import SubHeading from '@/app/(main)/components/elements/SubHeading'
 import clsx from 'clsx'
 import React from 'react'
 import { PortableTextBlock } from 'sanity'
@@ -30,7 +31,7 @@ const Card = ({ index, title, content }: Props) => {
 				</svg>
 			</span>
 
-			<h3 className='mb-2 text-xl font-semibold text-neutral-300 lg:text-2xl'>{title}</h3>
+			<SubHeading className='mb-2'>{title}</SubHeading>
 			<PortableText content={content} />
 		</article>
 	)
