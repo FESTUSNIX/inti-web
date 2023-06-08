@@ -156,3 +156,7 @@ body {
 .swiper .swiper-wrapper .swiper-slide {
 	height: auto;
 }
+
+.swiper-pagination .swiper-pagination-bullet {
+	background-color: theme(colors.dark.700);
+}
