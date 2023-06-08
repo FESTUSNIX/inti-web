@@ -17,7 +17,7 @@ export const SideMenu = () => {
 		<div className='md:hidden'>
 			<Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
 
-			{isOpen && <Menu />}
+			{isOpen && <Menu setIsOpen={setIsOpen} />}
 		</div>
 	)
 }

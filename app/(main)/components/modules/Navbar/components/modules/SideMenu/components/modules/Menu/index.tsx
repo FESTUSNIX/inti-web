@@ -2,12 +2,16 @@ import { pageLinks } from '@/app/(main)/components/modules/Navbar/constants/page
 import Link from 'next/link'
 import React from 'react'
 
-const Menu = () => {
+type Props = {
+	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Menu = ({ setIsOpen }: Props) => {
 	return (
 		<div className='fixed inset-0 z-40 flex items-center justify-center bg-dark-800/20 backdrop-blur-md'>
 			<ul className='flex flex-col gap-4 '>
 				{pageLinks.map(([displayName, link]: string[], index) => (
-					<li key={link}>
+					<li key={link} onClick={() => setIsOpen(false)}>
 						<Link
 							href={link}
 							className='group relative flex w-max cursor-pointer items-center px-4 text-4xl font-black uppercase'>
