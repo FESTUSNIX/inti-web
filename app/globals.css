@@ -6,6 +6,7 @@
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
+	cursor: none !important;
 	scrollbar-width: auto;
 	scrollbar-color: theme(colors.dark.700) transparent;
 }
@@ -34,10 +35,21 @@
 	background-clip: padding-box;
 }
 
+::-moz-selection {
+	color: theme(colors.neutral.50);
+	background: theme(colors.purple);
+}
+
+::selection {
+	color: theme(colors.neutral.50);
+	background: theme(colors.purple);
+}
+
 html {
 	min-height: 100%;
 	height: 100%;
 	font-family: var(--font-source-sans-pro), sans-serif;
+	cursor: default !important;
 }
 
 body {
