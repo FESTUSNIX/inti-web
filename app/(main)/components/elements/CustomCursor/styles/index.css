@@ -1,0 +1,59 @@
+.secondary-cursor {
+	--size: 45px;
+	display: block;
+	position: absolute;
+	top: -100%;
+	width: var(--size);
+	height: var(--size);
+	margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+	border-radius: 9999px;
+	pointer-events: none;
+	transform: scale(1);
+	transition: 0.1s ease-out, 0.3s backdrop-filter;
+	box-shadow: 0 0 16px rgba(255, 255, 255, 0);
+	z-index: 10000;
+}
+
+.secondary-cursor.invert {
+	mix-blend-mode: difference;
+	background-color: #3501fe;
+}
+
+.main-cursor {
+	display: block;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: -100%;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(1);
+	z-index: 10001;
+}
+
+.colapse {
+	animation: cursorColapse 0.5s forwards;
+}
+
+.un-colapse {
+	animation: cursorUnColapse 0.5s forwards;
+}
+
+@keyframes cursorColapse {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+
+@keyframes cursorUnColapse {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}

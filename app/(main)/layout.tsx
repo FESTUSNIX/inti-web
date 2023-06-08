@@ -2,6 +2,8 @@ import Footer from './components/modules/Footer'
 import Navbar from './components/modules/Navbar'
 import '../globals.css'
 import { Outfit, Source_Sans_Pro } from 'next/font/google'
+import CustomCursorManager from './components/elements/CustomCursor/context/manager'
+import CustomCursor from './components/elements/CustomCursor'
 
 const outfit = Outfit({
 	subsets: ['latin-ext'],
@@ -24,9 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang='en' className={`${outfit.variable} ${sourceSansPro.variable}`}>
 			<body suppressHydrationWarning={true}>
-				<Navbar />
-				<main>{children}</main>
-				<Footer />
+				<CustomCursorManager>
+					<CustomCursor />
+					<Navbar />
+					<main>{children}</main>
+					<Footer />
+				</CustomCursorManager>
 			</body>
 		</html>
 	)
