@@ -24,8 +24,8 @@ const Hero = () => {
 							nasza
 							<br /> oferta
 						</h2>
-						<Blob variant='solid-purple' width='w-1/2' className='right-0 top-0' />
-						<Blob variant='solid-blue' width='w-1/2' className='bottom-0 left-0 translate-y-full' />
+						<Blob variant='solid-purple' width='w-48 md:w-1/2' className='right-0 top-0' />
+						<Blob variant='solid-blue' width='w-48 md:w-1/2' className='bottom-0 left-0 translate-y-full' />
 					</div>
 				</div>
 				<MouseParallax isAbsolutelyPositioned enableOnTouchDevice strength={-0.015}>
