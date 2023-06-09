@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<CustomCursorManager>
 					<CustomCursor />
 					<Navbar />
-					<main>{children}</main>
+					<main className='overflow-x-hidden'>{children}</main>
 					<Footer />
 				</CustomCursorManager>
 			</body>
