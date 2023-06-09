@@ -5,8 +5,6 @@ import Marquee from 'react-fast-marquee'
 const Header = () => {
 	return (
 		<header className='relative flex flex-col pt-24'>
-			<div className='blob blob-header right-0 top-0 aspect-square w-32'></div>
-
 			<div className='wrapper mt-16 flex justify-center text-center md:mt-32 lg:mt-32'>
 				<h1 className='mb-6 font-heading text-4xl font-black !leading-tight text-neutral-100 sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl'>
 					Było nas <span className='text-gradient'>dwóch, </span>w każdym z nas inna krew, ale jeden przyświecał
