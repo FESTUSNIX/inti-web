@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { visionTool } from '@sanity/vision'
 import schemas from './sanity/schemas'
 import { myStructure } from './deskStructure'
 
@@ -12,7 +13,8 @@ const config = defineConfig({
 	plugins: [
 		deskTool({
 			structure: myStructure
-		})
+		}),
+		visionTool()
 	],
 	schema: { types: schemas }
 })
