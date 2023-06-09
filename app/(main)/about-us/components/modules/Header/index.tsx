@@ -1,3 +1,4 @@
+import Blob from '@/app/(main)/components/elements/Blob'
 import React from 'react'
 import Marquee from 'react-fast-marquee'
 
@@ -26,7 +27,7 @@ const Header = () => {
 					</p>
 				</Marquee>
 
-				<div className='blob blob-marquees top-0 h-full w-full'></div>
+				<Blob variant='radial-purple' width='w-full' height='h-full' className='top-0' />
 			</div>
 		</header>
 	)

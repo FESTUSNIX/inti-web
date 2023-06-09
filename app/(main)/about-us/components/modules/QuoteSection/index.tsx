@@ -1,3 +1,4 @@
+import Blob from '@/app/(main)/components/elements/Blob'
 import Button from '@/app/(main)/components/elements/Button'
 import Link from 'next/link'
 import React from 'react'
@@ -14,8 +15,8 @@ const QuoteSection = () => {
 				<Button theme='secondary'>Umów się na darmową konsultację</Button>
 			</Link>
 
-			<div className='blob blob-quote-section-1 left-0 top-0 aspect-square w-96 -translate-x-1/2 -translate-y-1/2'></div>
-			<div className='blob blob-quote-section-2 right-0 top-1/2 aspect-square w-96 -translate-y-1/2'></div>
+			<Blob variant='solid-purple' width='w-96' className='left-0 top-0 -translate-x-1/2 -translate-y-1/2 opacity-50' />
+			<Blob variant='solid-pink' width='w-96' className='right-0 top-1/2 -translate-y-1/2 opacity-50' />
 		</section>
 	)
 }

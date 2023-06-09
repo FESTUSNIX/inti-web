@@ -5,13 +5,14 @@ import React from 'react'
 import lightbulb from '../../../assets/lightbulb-hand-1.png'
 import Parallax from '@/app/(main)/components/elements/Parallax'
 import MouseParallax from '@/app/(main)/components/elements/MouseParallax'
+import Blob from '@/app/(main)/components/elements/Blob'
 
 const Hero = () => {
 	return (
 		<header className='relative flex min-h-screen flex-col items-center' style={{ clipPath: 'inset(0)' }}>
 			<div className='wrapper'>
-				<div className='flex flex-col items-center gap-4 pt-36 text-center md:pt-48'>
-					<h1 className='text-gradient relative z-20 max-w-md px-4 font-heading text-xl font-bold uppercase md:px-8 md:text-2xl xl:text-3xl'>
+				<div className='relative flex flex-col items-center gap-4 pt-36 text-center md:pt-48'>
+					<h1 className='text-gradient z-20 max-w-md px-4 font-heading text-xl font-bold uppercase md:px-8 md:text-2xl xl:text-3xl'>
 						lorem ipsum dolor
 					</h1>
 					<div className='relative text-7xl font-black uppercase sm:text-8xl md:text-9xl xl:text-[168px]'>
@@ -23,8 +24,8 @@ const Hero = () => {
 							nasza
 							<br /> oferta
 						</h2>
-						<div className='blob blob-hero-image bottom-0 aspect-square w-1/2'></div>
-						<div className='blob blob-portfolio-text right-0 top-0 aspect-square w-1/2'></div>
+						<Blob variant='solid-purple' width='w-1/2' className='right-0 top-0' />
+						<Blob variant='solid-blue' width='w-1/2' className='bottom-0 left-0 translate-y-full' />
 					</div>
 				</div>
 				<MouseParallax isAbsolutelyPositioned enableOnTouchDevice strength={-0.015}>

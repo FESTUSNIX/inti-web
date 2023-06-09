@@ -8,21 +8,7 @@ import PhoneTab from '../PhoneTab'
 import EmailTab from '../EmailTab'
 import { Formik } from 'formik'
 import { object, string, StringSchema, AnyObject, array, ISchema } from 'yup'
-
-const intrestOptions = [
-	{
-		label: 'UI/UX Design',
-		value: 'UI/UX Design'
-	},
-	{
-		label: 'SEO Optimization',
-		value: 'SEO Optimization'
-	},
-	{
-		label: 'Code optimalization',
-		value: 'Code optimalization'
-	}
-]
+import Blob from '@/app/(main)/components/elements/Blob'
 
 const contactFormSchema = (activeTab: 'email' | 'phone') => {
 	return object().shape({
@@ -122,9 +108,9 @@ const ContactForm = () => {
 						wyślij wiadomość
 					</Button>
 
-					<div className='blob blob-contact-1 inset-0 !z-[0]'></div>
-					<div className='blob blob-contact-2 left-0 top-0 !z-[0] aspect-square w-1/2'></div>
-					<div className='blob blob-contact-3 bottom-0 right-0 !z-[0] aspect-square w-1/2'></div>
+					<Blob variant='solid-blue' width='w-1/2' className='left-0 top-0 opacity-50' />
+					<Blob variant='linear-purple-to-dark-purple' width='w-full' height='h-full opacity-50' />
+					<Blob variant='radial-purple' width='w-1/2' className='bottom-0 right-0 opacity-50' />
 				</form>
 			)}
 		</Formik>

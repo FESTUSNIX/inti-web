@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionHeading from '../../elements/SectionHeading'
 import Cards from './components/modules/Cards'
+import Blob from '../../elements/Blob'
 
 const OurAdvantages = () => {
 	console.log('refresh')
@@ -15,8 +16,13 @@ const OurAdvantages = () => {
 				{/* @ts-expect-error Server Component */}
 				<Cards />
 
-				<div className='blob-our-advantages-1 blob left-2/4 top-0 -translate-x-1/2' />
-				<div className='blob blob-our-advantages-2 absolute bottom-0 right-0 h-1/2 w-1/4 -translate-x-1/2 opacity-30' />
+				<Blob variant='solid-purple' width='w-64' height='h-64' className='left-2/4 top-0 -translate-x-1/2' />
+				<Blob
+					variant='solid-blue'
+					width='w-1/4'
+					height='h-1/2'
+					className='bottom-0 right-0 -translate-x-1/2 opacity-50'
+				/>
 			</div>
 		</section>
 	)

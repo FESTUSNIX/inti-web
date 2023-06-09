@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import SectionHeading from '@/app/(main)/components/elements/SectionHeading'
 import Image from 'next/image'
 import img1 from '../../../assets/Festus_fluid_shapes_image_slightly_contrasting_with_06000f_da4a4a33-f012-4637-bf01-0918647e4f24.png'
+import Blob from '@/app/(main)/components/elements/Blob'
 
 type Props = {}
 
@@ -35,7 +36,7 @@ const services = [
 
 const ServiceDescriptions = ({}: Props) => {
 	return (
-		<section className='wrapper flex min-h-screen flex-col items-center justify-center gap-24 py-24 md:gap-32 lg:gap-48 lg:py-36'>
+		<section className='wrapper relative flex min-h-screen flex-col items-center justify-center gap-24 py-24 md:gap-32 lg:gap-48 lg:py-36'>
 			{services.map((service, index) => (
 				<div
 					key={service.id}
@@ -53,6 +54,11 @@ const ServiceDescriptions = ({}: Props) => {
 					</div>
 				</div>
 			))}
+
+			<Blob variant='solid-purple' width='w-56' height='h-64' className='left-1/2 top-1/2 -translate-y-1/2' />
+			<Blob variant='linear-pink' width='w-56' height='h-64' className='left-64 top-32' />
+			<Blob variant='solid-blue' width='w-64' height='h-32' className='bottom-64 right-0' />
+
 		</section>
 	)
 }

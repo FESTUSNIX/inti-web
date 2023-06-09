@@ -1,3 +1,4 @@
+import Blob from '@/app/(main)/components/elements/Blob'
 import React from 'react'
 
 const description =
@@ -26,7 +27,7 @@ const services = [
 
 const ServicesCards = () => {
 	return (
-		<section className='wrapper flex items-center justify-center py-12 xl:py-24'>
+		<section className='wrapper relative flex items-center justify-center py-12 xl:py-24'>
 			<div className='flex flex-row flex-wrap 2xl:px-32'>
 				{services.map((service, index) => (
 					<div key={index} className='mx-auto w-full py-4 md:w-1/2 md:px-4 lg:w-1/3'>
@@ -37,6 +38,12 @@ const ServicesCards = () => {
 					</div>
 				))}
 			</div>
+			<Blob
+				variant='linear-blue-to-purple'
+				width='w-1/2'
+				height='h-48'
+				className='left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+			/>
 		</section>
 	)
 }

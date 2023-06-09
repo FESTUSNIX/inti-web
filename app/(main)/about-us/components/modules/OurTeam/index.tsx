@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { sanityUrlFor } from '@/sanity/sanityUtils'
 import { AboutUs } from '@/types/AboutUs'
 import { TeamMember } from '@/types/TeamMember'
+import Blob from '@/app/(main)/components/elements/Blob'
 
 type Props = {
 	teamMembers: TeamMember[]
@@ -67,7 +68,7 @@ const OurTeam = ({ teamMembers, aboutUsData }: Props) => {
 					))}
 				</div>
 
-				<div className='blob blob-team-members top-0 aspect-square w-full'></div>
+				<Blob variant='linear-pink' width='w-full' className='top-0 opacity-50' />
 			</div>
 
 			<div className='grid grow basis-3/5 grid-cols-2 gap-2 lg:ml-12 lg:gap-4'>

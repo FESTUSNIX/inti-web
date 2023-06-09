@@ -1,3 +1,4 @@
+import Blob from '@/app/(main)/components/elements/Blob'
 import clsx from 'clsx'
 import React from 'react'
 
@@ -24,7 +25,7 @@ const OurCapabilities = () => {
 					<p className='ml-auto text-neutral-400 line-through'>Nie potrafimy</p>
 				</div>
 
-				<ul className='flex flex-col'>
+				<ul className='relative flex flex-col'>
 					{capabilities.map((capability, index) => (
 						<li
 							key={capability}
@@ -45,6 +46,9 @@ const OurCapabilities = () => {
 							</h3>
 						</li>
 					))}
+					<Blob variant='radial-purple' width='w-80 md:w-96' className='top-0' />
+					<Blob variant='linear-pink' width='w-96 md:w-1/2' className='right-1/4 top-1/2 opacity-50' />
+					<Blob variant='linear-blue-to-purple' width='w-96 md:w-1/2' className='bottom-0 left-11 opacity-50' />
 				</ul>
 			</div>
 		</section>

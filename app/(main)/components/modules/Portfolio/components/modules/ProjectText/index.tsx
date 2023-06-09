@@ -8,6 +8,7 @@ import ScrollProgress from '../../elements/ScrollProgress'
 import { Project } from '@/types/Project'
 import PortableText from '@/app/(main)/components/elements/PortableText'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import Blob from '@/app/(main)/components/elements/Blob'
 
 type Props = {
 	sectionElement: React.RefObject<HTMLDivElement>
@@ -94,7 +95,7 @@ const ProjectText = ({ sectionElement, currentProjectIndex, projects, defaultTex
 					<ScrollProgress sectionElement={sectionElement} />
 				</div>
 
-				<div className='blob blob-portfolio-text top-0 aspect-square w-full -translate-x-1/2'></div>
+				<Blob variant='radial-purple' width='w-80' className='top-0 -translate-x-1/2' />
 			</div>
 		</div>
 	)
