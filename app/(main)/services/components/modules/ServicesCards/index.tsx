@@ -29,7 +29,7 @@ const ServicesCards = () => {
 		<section className='wrapper flex items-center justify-center py-12 xl:py-24'>
 			<div className='flex flex-row flex-wrap 2xl:px-32'>
 				{services.map((service, index) => (
-					<div key={index} className='mx-auto w-full p-4 md:w-1/2 lg:w-1/3'>
+					<div key={index} className='mx-auto w-full py-4 md:w-1/2 md:px-4 lg:w-1/3'>
 						<div className='rounded-lg border border-dark-700/20 bg-dark-800/20 px-8 py-8 text-center'>
 							<h2 className='mb-8 text-2xl font-semibold text-neutral-200'>{service.title}</h2>
 							<p className='text-neutral-400'>{service.description}</p>
