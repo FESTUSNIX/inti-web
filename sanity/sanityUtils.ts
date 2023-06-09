@@ -6,6 +6,8 @@ import { Testimonial } from '@/types/Testimonial'
 import imageUrlBuilder from '@sanity/image-url'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { TeamMember } from '@/types/TeamMember'
+import { AboutUs } from '@/types/AboutUs'
+import { Services } from '@/types/Services'
 
 const imageBuilder = imageUrlBuilder(clientConfig)
 
@@ -98,13 +100,27 @@ export async function getTeamMembers(): Promise<TeamMember[]> {
 	)
 }
 
-export async function getSingletonAboutUs(): Promise<any> {
+export async function getSingletonAboutUs(): Promise<AboutUs> {
 	return createClient(clientConfig).fetch(
 		groq`*[_type == "aboutUs"]{
             _id,
             _createdAt,
             aboutUsMarquees,
             "aboutUsImages": aboutUsImages
+        }[0]`
+	)
+}
+
+export async function getSingletonServices(): Promise<Services> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "services"]{
+            _id,
+            _createdAt,
+            contactCTA,
+            ourCapabilities,
+            serviceCards,
+            serviceDescriptions,
+            process
         }[0]`
 	)
 }
