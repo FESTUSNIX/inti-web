@@ -4,8 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import bgImg from '../../../assets/Festus_fluid_shapes_image_slightly_contrasting_with_06000f_dark_6b3e6316-6320-4f67-867a-9e434c195d83.png'
+import { ContactCTA } from '@/types/Services'
 
-const ContactCTA = () => {
+type Props = {
+	data: ContactCTA
+}
+
+const ContactCTA = ({ data }: Props) => {
 	return (
 		<section
 			className='relative flex items-center justify-center bg-cover bg-fixed bg-no-repeat py-16 md:py-24 lg:py-32'
@@ -18,9 +23,9 @@ const ContactCTA = () => {
 			/>
 
 			<div className='flex flex-col items-center text-center'>
-				<HeadingLabel className='mb-4'>lorem ipsum dolor sit</HeadingLabel>
+				<HeadingLabel className='mb-4'>{data.label}</HeadingLabel>
 				<h2 className='max-w-4xl px-4 font-heading text-3xl font-semibold text-neutral-200 priority:mb-12 md:px-16 md:text-4xl xl:text-5xl'>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis commodi impedit molestiae.
+					{data.text}
 				</h2>
 				<Link href={'/contact'}>
 					<Button theme='CTASecondary'>umów się na konsultację</Button>

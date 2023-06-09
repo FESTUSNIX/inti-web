@@ -1,32 +1,23 @@
 import Blob from '@/app/(main)/components/elements/Blob'
+import { OurCapabilities } from '@/types/Services'
 import clsx from 'clsx'
 import React from 'react'
 
-const capabilities = [
-	'code a website',
-	'create a logo',
-	'create a unique design',
-	'support internet explorer',
-	'connect everything to a cms',
-	'abandon you after finishing the project :(',
-	'make the website responsive',
-	'take all your money',
-	'help you with branding',
-	'stop listening to good music',
-	'create stunning animations'
-]
+type Props = {
+	data: OurCapabilities
+}
 
-const OurCapabilities = () => {
+const OurCapabilities = ({ data }: Props) => {
 	return (
 		<section className='wrapper py-24 lg:py-36'>
 			<div className='flex flex-col gap-24'>
 				<div className='flex flex-wrap justify-between gap-4 font-heading text-lg font-bold uppercase tracking-[0.2em] text-neutral-300 md:text-xl lg:text-2xl'>
-					<p className='text-gradient'>Potrafimy</p>
-					<p className='ml-auto text-neutral-400 line-through'>Nie potrafimy</p>
+					<p className='text-gradient'>{data.headingLeft}</p>
+					<p className='ml-auto text-neutral-400 line-through'>{data.headingRight}</p>
 				</div>
 
 				<ul className='relative flex flex-col'>
-					{capabilities.map((capability, index) => (
+					{data.list.map((capability, index) => (
 						<li
 							key={capability}
 							className={clsx(
