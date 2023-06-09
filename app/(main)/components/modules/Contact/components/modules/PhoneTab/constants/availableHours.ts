@@ -1,10 +1,6 @@
 export const availableHours = [
 	{ label: 'Dowolne', value: 'dowolne' },
 	{
-		label: '06:00 - 07:00',
-		value: '06:00 - 07:00'
-	},
-	{
 		label: '07:00 - 08:00',
 		value: '07:00 - 08:00'
 	},
@@ -53,7 +49,11 @@ export const availableHours = [
 		value: '18:00 - 19:00'
 	},
 	{
-		label: '19:00 - 20:00',
-		value: '19:00 - 20:00'
+		label: '19:00 - 21:00',
+		value: '19:00 - 21:00'
+	},
+	{
+		label: '21:00 - 22:30',
+		value: '21:00 - 22:30'
 	}
 ]
