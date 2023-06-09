@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Button from '@/app/(main)/components/elements/Button'
 import { FaSearch } from 'react-icons/fa'
 import SubHeading from '@/app/(main)/components/elements/SubHeading'
-import useResponsive from '@/app/(main)/hooks/useResponsive'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -14,11 +13,8 @@ import 'swiper/css/pagination'
 type Props = {}
 
 const TimelineMobile = ({}: Props) => {
-	const { isMD } = useResponsive()
-
-	if (isMD) return null
 	return (
-		<div className='mt-4 w-full'>
+		<div className='mt-4 w-full md:hidden'>
 			<Swiper slidesPerView={1} modules={[Pagination]} pagination={true}>
 				{Array(4)
 					.fill(0)

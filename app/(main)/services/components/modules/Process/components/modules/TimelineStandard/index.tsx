@@ -1,19 +1,13 @@
-'use client'
-
 import Button from '@/app/(main)/components/elements/Button'
 import SubHeading from '@/app/(main)/components/elements/SubHeading'
-import useResponsive from '@/app/(main)/hooks/useResponsive'
 import React from 'react'
 import { FaSearch } from 'react-icons/fa'
 
 type Props = {}
 
 const TimelineStandard = ({}: Props) => {
-	const { isMD } = useResponsive()
-
-	if (!isMD) return null
 	return (
-		<div className='wrapper mt-16 flex flex-col'>
+		<div className='wrapper mt-16 flex flex-col max-md:hidden'>
 			{Array(4)
 				.fill(0)
 				.map((step, index) => (
