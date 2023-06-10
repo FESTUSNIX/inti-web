@@ -39,7 +39,7 @@ module.exports = {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'gradient-brand': 'linear-gradient(to right, #9316CE, #3300FF)'
+				'gradient-brand': 'linear-gradient(to right, #3300FF, #9316CE)'
 			},
 			fontFamily: {
 				heading: ['var(--font-outfit)'],
