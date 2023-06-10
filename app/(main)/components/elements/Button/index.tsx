@@ -1,5 +1,8 @@
+'use client'
+
 import clsx from 'clsx'
 import React from 'react'
+import { useCustomCursorContext } from '../CustomCursor/hooks/useCustomCursorContext'
 
 type Props = {
 	children: React.ReactNode
@@ -13,6 +16,8 @@ type Props = {
 type BtnTheme = 'primary' | 'secondary' | 'CTA' | 'CTASecondary'
 
 const Button = ({ children, className, theme = 'primary', onClick, isDisabled, type = 'button' }: Props) => {
+	const { setType } = useCustomCursorContext()
+
 	const styles = {
 		primary: 'bg-neutral-100 text-dark-900 hover:bg-neutral-200',
 		secondary: 'bg-transparent text-neutral-100 border border-neutral-100 hover:border-neutral-200',
@@ -30,7 +35,9 @@ const Button = ({ children, className, theme = 'primary', onClick, isDisabled, t
 				styles[theme],
 				isDisabled && 'pointer-events-none opacity-50',
 				className
-			)}>
+			)}
+			onMouseEnter={() => setType('button')}
+			onMouseLeave={() => setType('default')}>
 			{children}
 		</button>
 	)

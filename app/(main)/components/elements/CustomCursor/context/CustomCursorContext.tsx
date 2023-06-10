@@ -3,7 +3,7 @@
 import { createContext } from 'react'
 import React, { useState } from 'react'
 
-export type CursorLookType = 'slider-hover' | 'slider-drag' | 'text' | 'link' | 'hamburger' | 'default'
+export type CursorLookType = 'button' | 'text' | 'link' | 'hamburger' | 'default'
 export type CustomCursorType = {
 	type: CursorLookType
 	setType: (type: CursorLookType) => void
