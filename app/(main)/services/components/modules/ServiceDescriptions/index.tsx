@@ -18,7 +18,7 @@ const ServiceDescriptions = ({ data }: Props) => {
 				<div
 					key={service._key}
 					className={clsx(
-						'flex flex-col gap-8 lg:flex-row lg:gap-16 xl:gap-32',
+						'flex max-w-full flex-col gap-8 lg:flex-row lg:gap-16 xl:gap-32',
 						index % 2 === 0 && 'lg:flex-row-reverse'
 					)}>
 					<div className='flex basis-1/2 flex-col'>
