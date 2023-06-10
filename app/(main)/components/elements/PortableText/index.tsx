@@ -3,7 +3,7 @@
 import React from 'react'
 import { PortableTextBlock } from 'sanity'
 import { PortableText as ReactPortableText } from '@portabletext/react'
-import clsx from 'clsx'
+import { RichTextComponents } from '../RichTextComponents'
 
 type Props = {
 	content: PortableTextBlock[]
@@ -12,8 +12,8 @@ type Props = {
 
 const PortableText = ({ content, className }: Props) => {
 	return (
-		<div className={clsx('text-neutral-400', className)}>
-			<ReactPortableText value={content} />
+		<div className={className}>
+			<ReactPortableText value={content} components={RichTextComponents} />
 		</div>
 	)
 }
