@@ -3,6 +3,7 @@ import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
 import schemas from './sanity/schemas'
 import { myStructure } from './deskStructure'
+import { codeInput } from '@sanity/code-input'
 
 const config = defineConfig({
 	projectId: '4woi3ok9',
@@ -14,7 +15,8 @@ const config = defineConfig({
 		deskTool({
 			structure: myStructure
 		}),
-		visionTool()
+		visionTool(),
+		codeInput()
 	],
 	schema: { types: schemas }
 })
